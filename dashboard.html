@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Serein Spaces</title>
+    <title>Dashboard | </title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -52,24 +52,25 @@
     <div class="sidebar d-flex flex-column" id="sidebar">
         <div class="px-4 py-4 mb-3 border-bottom border-light">
             <a class="navbar-brand text-accent fs-4" href="index.html">
-                <i class="bi bi-layers-half text-accent"></i>
-                <span class="text-primary" style="font-family: 'Playfair Display', serif;">SEREIN SPACES</span>
+                <i class="bi bi-stack text-accent"></i>
             </a>
         </div>
         <nav class="flex-grow-1">
-            <a href="#analytics" class="sidebar-link active"><i class="bi bi-speedometer2 me-2"></i> Analytics</a>
-            <a href="services.html" class="sidebar-link"><i class="bi bi-grid me-2"></i> Services</a>
-            <a href="about.html" class="sidebar-link"><i class="bi bi-info-circle me-2"></i> About</a>
-            <a href="contact.html" class="sidebar-link"><i class="bi bi-envelope me-2"></i> Contact</a>
+            <a href="#overview" class="sidebar-link active"><i class="bi bi-grid-1x2 me-2"></i> Overview</a>
+            <a href="#projects" class="sidebar-link"><i class="bi bi-briefcase me-2"></i> My Projects</a>
+            <a href="#invoices" class="sidebar-link"><i class="bi bi-receipt me-2"></i> Invoices</a>
+            <a href="#messages" class="sidebar-link"><i class="bi bi-chat-text me-2"></i> Messages</a>
+            <a href="#settings" class="sidebar-link"><i class="bi bi-gear me-2"></i> Settings</a>
+            <a href="#support" class="sidebar-link"><i class="bi bi-question-circle me-2"></i> Support</a>
         </nav>
         <div class="mt-auto p-4 border-top border-light">
             <div class="d-flex align-items-center gap-3 mb-4">
-                <div class="rounded-circle bg-accent d-flex align-items-center justify-content-center text-white" style="width: 45px; height: 45px;">
-                    <i class="bi bi-person-fill"></i>
+                <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white" style="width: 40px; height: 40px;">
+                    <i class="bi bi-person"></i>
                 </div>
                 <div class="small overflow-hidden">
-                    <div class="fw-bold text-primary">Client User</div>
-                    <div class="text-muted text-truncate" style="max-width: 140px;">client@example.com</div>
+                    <div class="fw-bold">John Doe</div>
+                    <div class="text-muted text-truncate" style="max-width: 120px;">Premium Member</div>
                 </div>
             </div>
             <a href="login.html" class="btn btn-sm btn-outline-danger w-100">Logout</a>
@@ -79,31 +80,48 @@
     <!-- Main Content -->
     <div class="main-content">
         <!-- Top Nav -->
-        <nav class="navbar navbar-dashboard navbar-expand rounded-4 shadow-sm mb-5 p-3">
+        <nav class="navbar navbar-dashboard navbar-expand rounded-4 shadow-sm mb-4 p-3">
             <div class="container-fluid">
-                <button class="btn btn-outline-accent d-lg-none me-2" id="sidebarToggle">
+                <button class="btn btn-outline-secondary d-lg-none me-2" id="sidebarToggle">
                     <i class="bi bi-list"></i>
                 </button>
-                <h5 class="mb-0 d-none d-md-block fw-bold" style="font-family: 'Playfair Display', serif;">Dashboard</h5>
-                <div class="ms-auto d-flex align-items-center gap-3">
-                    <button class="btn btn-sm" id="themeToggleMobile">
+                <div class="d-none d-md-block">
+                    <h5 class="mb-0 fw-bold">User Dashboard</h5>
+                    <p class="small text-muted mb-0">Welcome back, John! Here's your workspace overview.</p>
+                </div>
+                <div class="ms-auto d-flex align-items-center gap-2">
+                    <button class="btn btn-sm" id="themeToggle" title="Toggle Theme">
                         <i class="bi bi-moon-stars"></i>
                     </button>
                     <div class="dropdown">
-                        <a href="#" class="btn btn-sm btn-outline-custom dropdown-toggle" data-bs-toggle="dropdown">
+                        <button class="btn btn-sm btn-light position-relative" data-bs-toggle="dropdown">
                             <i class="bi bi-bell"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
-                            <li><a class="dropdown-item rounded-2" href="#">Consultation confirmed</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Agreement signed</a></li>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">2</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 mt-2">
+                            <li><a class="dropdown-item rounded-2 py-2 small" href="#">Consultation confirmed for Monday</a></li>
+                            <li><a class="dropdown-item rounded-2 py-2 small" href="#">Invoices for March are ready</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown ms-2">
+                        <button class="btn btn-sm btn-light p-1 rounded-circle" data-bs-toggle="dropdown">
+                            <div class="bg-secondary rounded-circle text-white d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                <i class="bi bi-person"></i>
+                            </div>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 mt-2">
+                            <li><a class="dropdown-item rounded-2 py-2 small" href="#"><i class="bi bi-person me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item rounded-2 py-2 small" href="#"><i class="bi bi-settings me-2"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item rounded-2 py-2 small text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <!-- Analytics Section -->
-        <section id="analytics" class="mb-5 reveal">
+        <!-- Overview Section -->
+        <section id="overview" class="mb-5 reveal">
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card-premium">
@@ -149,7 +167,7 @@
                                 <h6 class="text-primary">Phase 2: Labeling & Binning</h6>
                                 <p class="small mb-0">Implement clear container systems and personalized labels for daily accessibility.</p>
                             </div>
-                            <button class="btn btn-custom btn-sm">Download Full Plan (PDF)</button>
+                            <button class="btn btn-primary-brand btn-sm">Download Full Plan (PDF)</button>
                         </div>
                     </div>
                 </div>
@@ -181,70 +199,133 @@
             </div>
         </section>
 
-        <!-- Users Section -->
-        <section id="users" class="mb-5">
-            <h4 class="mb-4">Connected Experts</h4>
+        <!-- Projects Section -->
+        <section id="projects" class="mb-5">
+            <h4 class="mb-4">Recent Projects</h4>
+            <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h6 class="mb-0">Current Project: Master Closet</h6>
+                    <span class="badge bg-secondary">In Progress</span>
+                </div>
+                <p class="small text-muted">Start Date: March 20, 2026 | Expected Completion: March 28, 2026</p>
+                <div class="progress" style="height: 8px;">
+                    <div class="progress-bar bg-secondary" style="width: 65%;"></div>
+                </div>
+            </div>
+            
             <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                 <table class="table table-hover mb-0 bg-white">
                     <thead class="bg-light">
                         <tr>
-                            <th class="px-4 py-3">Organized Specialist</th>
-                            <th class="py-3">Role</th>
+                            <th class="px-4 py-3">Project Name</th>
+                            <th class="py-3">Specialist</th>
                             <th class="py-3">Status</th>
-                            <th class="py-3">Contact</th>
+                            <th class="py-3 text-end px-4">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="px-4 py-3">Jane Doe</td>
-                            <td>Lead Professional Organizer</td>
-                            <td><span class="badge bg-success-subtle text-success">Active</span></td>
-                            <td><button class="btn btn-sm btn-outline-tertiary"><i class="bi bi-chat"></i></button></td>
+                            <td class="px-4 py-3">Kitchen Pantry Prep</td>
+                            <td>Jane Doe</td>
+                            <td><span class="badge bg-success-subtle text-success">Completed</span></td>
+                            <td class="text-end px-4"><button class="btn btn-sm btn-light"><i class="bi bi-eye"></i></button></td>
                         </tr>
                         <tr>
-                            <td class="px-4 py-3">Alice Smith</td>
-                            <td>Relocation Consultant</td>
-                            <td><span class="badge bg-secondary-subtle text-secondary">Offline</span></td>
-                            <td><button class="btn btn-sm btn-outline-tertiary"><i class="bi bi-chat"></i></button></td>
+                            <td class="px-4 py-3">Home Office Setup</td>
+                            <td>Alice Smith</td>
+                            <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
+                            <td class="text-end px-4"><button class="btn btn-sm btn-light"><i class="bi bi-eye"></i></button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Orders Section -->
-        <section id="orders" class="mb-5">
-            <h4 class="mb-4">Recent Service Orders</h4>
-            <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="mb-0">Current Project: Master Closet</h6>
-                    <span class="badge bg-primary">In Progress</span>
+        <!-- Invoices Section -->
+        <section id="invoices" class="mb-5">
+            <h4 class="mb-4">Invoices & Payments</h4>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6 class="mb-0">#INV-2026-001</h6>
+                            <span class="text-success fw-bold">Paid</span>
+                        </div>
+                        <p class="small text-muted mb-3">Basic Room Organization Service</p>
+                        <h5 class="fw-bold mb-0">$299.00</h5>
+                    </div>
                 </div>
-                <p class="small text-secondary">Start Date: March 20, 2026 | Expected Completion: March 28, 2026</p>
-                <div class="progress" style="height: 10px;">
-                    <div class="progress-bar bg-tertiary" style="width: 65%;"></div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6 class="mb-0">#INV-2026-002</h6>
+                            <span class="text-warning fw-bold">Pending</span>
+                        </div>
+                        <p class="small text-muted mb-3">Custom Bins & Supplies</p>
+                        <h5 class="fw-bold mb-0">$145.00</h5>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Messages Section -->
-        <section id="messages">
+        <section id="messages" class="mb-5">
             <h4 class="mb-4">Recent Messages</h4>
             <div class="list-group list-group-flush shadow-sm rounded-4 overflow-hidden border-0">
                 <a href="#" class="list-group-item list-group-item-action p-4 border-0">
                     <div class="d-flex w-100 justify-content-between">
                         <h6 class="mb-1 fw-bold">Jane Doe</h6>
-                        <small class="text-secondary">3 hours ago</small>
+                        <small class="text-muted">3 hours ago</small>
                     </div>
                     <p class="mb-1 small">The storage bins have arrived! I'll be over tomorrow at 9 AM to begin the install.</p>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action p-4 border-0 border-top">
                     <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold">Serein Support</h6>
-                        <small class="text-secondary">Yesterday</small>
+                        <h6 class="mb-1 fw-bold">Support Team</h6>
+                        <small class="text-muted">Yesterday</small>
                     </div>
-                    <p class="mb-1 small">Your service agreement has been successfully processed.</p>
+                    <p class="mb-1 small">Your service agreement has been successfully processed and verified.</p>
                 </a>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="mb-5">
+            <h4 class="mb-4">Profile Settings</h4>
+            <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-semibold">Email Notifications</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label small">Project Updates</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <button class="btn btn-primary-brand px-4">Save Changes</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section id="support">
+            <h4 class="mb-4">Help & Support</h4>
+            <div class="row g-4">
+                <div class="col-md-12">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 d-flex flex-row align-items-center gap-4">
+                        <div class="icon-box mb-0" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Contact Support Team</h6>
+                            <p class="text-muted small mb-0">Our experts are available 24/7 to help with your project.</p>
+                        </div>
+                        <button class="btn btn-secondary-brand ms-auto">Get Help</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

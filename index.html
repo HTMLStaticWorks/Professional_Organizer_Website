@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serein Spaces | Professional Home & Office Organizer</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts - Inter & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-layers-half text-accent"></i>
+                <span style="font-family: 'Playfair Display', serif;">SEREIN SPACES</span>
+            </a>
+            
+            <div class="d-flex align-items-center d-lg-none gap-2">
+                <button class="btn btn-sm btn-outline-secondary" id="themeToggleMobile">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-sm" id="themeToggle">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-custom">Login</a>
+                    <a href="signup.html" class="btn btn-outline-custom">Signup</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            </ul>
+            <div class="mt-4 d-grid gap-2">
+                <a href="login.html" class="btn btn-custom">Login</a>
+                <a href="signup.html" class="btn btn-outline-custom">Signup</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 reveal">
+                    <span class="section-tag">ELEVATE YOUR ENVIRONMENT</span>
+                    <h1 class="display-2" style="font-family: 'Playfair Display', serif;">Reclaim Your Calm, <br><span class="text-accent">Organize Your Life.</span></h1>
+                    <p class="lead mb-5 text-muted" style="font-size: 1.25rem;">Bespoke home and office organization services designed to bring functional beauty and lasting peace to your most cherished spaces.</p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-start">
+                        <a href="services.html" class="btn btn-custom btn-lg px-5">View Services</a>
+                        <a href="#contact" class="btn btn-outline-custom btn-lg px-5">Book Consultation</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 reveal">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1594488651083-201664cc7f3f?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 shadow-lg" alt="Organized Space">
+                        <div class="position-absolute bottom-0 start-0 translate-middle-x d-none d-xl-block" style="margin-left: 20px; margin-bottom: -30px;">
+                            <div class="card-premium py-3 px-4 shadow-lg border-0 bg-white">
+                                <div class="d-flex align-items-center gap-3">
+                                    <i class="bi bi-star-fill text-warning fs-3"></i>
+                                    <div>
+                                        <div class="fw-bold text-dark">Top Rated</div>
+                                        <div class="small text-muted">Luxury Organizers</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Stats -->
+    <section class="py-5 bg-alt">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-3 reveal">
+                    <div class="stat-card">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Spaces Transformed</span>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal">
+                    <div class="stat-card">
+                        <span class="stat-number">12k+</span>
+                        <span class="stat-label">Items Decluttered</span>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal">
+                    <div class="stat-card">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal">
+                    <div class="stat-card">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: About -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center py-5 g-5">
+                <div class="col-lg-6 reveal">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1591123120675-6f7f1a90f5b1?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 shadow" alt="Professional Organizer">
+                        <div class="position-absolute top-50 start-100 translate-middle d-none d-lg-block">
+                             <div class="bg-accent text-white p-4 rounded-4 shadow-lg" style="width: 200px;">
+                                <h3 class="h1 mb-0 fw-bold">100%</h3>
+                                <p class="mb-0 small">Sustainable Methods</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal">
+                    <span class="section-tag">OUR STORY</span>
+                    <h2 class="display-5 mt-2" style="font-family: 'Playfair Display', serif;">More than just cleaning, <br>we create <span class="text-accent">sustainable systems.</span></h2>
+                    <p class="text-muted mt-4 mb-4" style="font-size: 1.1rem;">At Serein Spaces, we believe that an organized environment is the foundation for a peaceful mind. Our mission is to transform cluttered chaos into harmonious order through systems that are as beautiful as they are functional.</p>
+                    <ul class="list-unstyled mt-4 d-grid gap-3">
+                        <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-accent fs-4 me-3"></i> <span><strong>Personalized Space Planning</strong> - Tailored to your lifestyle.</span></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-accent fs-4 me-3"></i> <span><strong>Hands-on Decluttering</strong> - Stress-free transition support.</span></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-accent fs-4 me-3"></i> <span><strong>Maintenance Strategies</strong> - Systems that actually stick.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Process -->
+    <section class="bg-alt py-5">
+        <div class="container">
+            <div class="text-center reveal mb-5">
+                <span class="section-tag">HOW IT WORKS</span>
+                <h2 class="display-5" style="font-family: 'Playfair Display', serif;">Your Journey to <span class="text-accent">Serenity</span></h2>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-3 reveal">
+                    <div class="card-premium">
+                        <div class="icon-box">01</div>
+                        <h4>Consultation</h4>
+                        <p class="text-muted small">We discuss your goals, challenges, and vision for the space during a complimentary call.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal">
+                    <div class="card-premium">
+                        <div class="icon-box">02</div>
+                        <h4>Assessment</h4>
+                        <p class="text-muted small">A deep dive into your environment to identify bottlenecks and planning opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal">
+                    <div class="card-premium">
+                        <div class="icon-box">03</div>
+                        <h4>Transformation</h4>
+                        <p class="text-muted small">Hands-on decluttering and implementation of our custom organizing systems.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal">
+                    <div class="card-premium">
+                        <div class="icon-box">04</div>
+                        <h4>Maintenance</h4>
+                        <p class="text-muted small">We provide you with the tools and knowledge to keep your space perfect forever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Services Highlights -->
+    <section class="py-5" id="services">
+        <div class="container py-5">
+            <div class="text-center reveal mb-5">
+                <span class="section-tag">ELITE SERVICES</span>
+                <h2 class="display-5" style="font-family: 'Playfair Display', serif;">Tailored Solutions for <span class="text-accent">Modern Living</span></h2>
+                <p class="text-muted">Premium organization for every corner of your life.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="card-premium">
+                        <div class="icon-box"><i class="bi bi-house-door"></i></div>
+                        <h4>Home Organization</h4>
+                        <p class="text-muted">Kitchens, pantries, closets, and common areas optimized for your lifestyle and aesthetic preferences.</p>
+                        <hr class="my-4 opacity-50">
+                        <ul class="list-unstyled small text-muted d-grid gap-2">
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Pantry Curation</li>
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Closet Editing</li>
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Toy Room Design</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="card-premium">
+                        <div class="icon-box"><i class="bi bi-briefcase"></i></div>
+                        <h4>Office Solutions</h4>
+                        <p class="text-muted">Workspace decluttering and digital organization to enhance clarity, focus, and overall productivity.</p>
+                        <hr class="my-4 opacity-50">
+                        <ul class="list-unstyled small text-muted d-grid gap-2">
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> File Management</li>
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Desktop Workflow</li>
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Storage Audits</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="card-premium">
+                        <div class="icon-box"><i class="bi bi-truck"></i></div>
+                        <h4>Relocation Support</h4>
+                        <p class="text-muted">Complete white-glove service for packing, unpacking, and setting up your new home from day one.</p>
+                        <hr class="my-4 opacity-50">
+                        <ul class="list-unstyled small text-muted d-grid gap-2">
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Pre-move Purge</li>
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Unpacking & Set-up</li>
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> New Home Mapping</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 reveal">
+                <a href="services.html" class="btn btn-custom px-5">Explore All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Gallery (Before & After) -->
+    <section id="gallery" class="bg-alt py-5">
+        <div class="container py-5">
+            <div class="text-center reveal mb-5">
+                <span class="section-tag">TRANSFORMATIONS</span>
+                <h2 class="display-5" style="font-family: 'Playfair Display', serif;">Visual Proof of <span class="text-accent">Order</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 reveal">
+                    <div class="rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1597072634421-b5293461771d?auto=format&fit=crop&q=80&w=800" class="img-fluid w-100" alt="Before" style="height: 400px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 m-3">
+                            <span class="badge bg-secondary px-3 py-2">BEFORE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <div class="rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1594488651083-201664cc7f3f?auto=format&fit=crop&q=80&w=800" class="img-fluid w-100" alt="After" style="height: 400px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 m-3">
+                            <span class="badge bg-accent px-3 py-2">AFTER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Testimonials -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center reveal mb-5">
+                <span class="section-tag">VOICES OF CALM</span>
+                <h2 class="display-5" style="font-family: 'Playfair Display', serif;">What Our <span class="text-accent">Clients Say</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="card-premium h-100">
+                        <div class="text-accent mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic text-muted">"I can finally breathe in my own home. The pantry system they created is a game changer for our busy family of five!"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="icon-box m-0 me-3" style="width: 50px; height: 50px;"><i class="bi bi-person"></i></div>
+                            <div>
+                                <div class="fw-bold">Sarah Jenkins</div>
+                                <div class="small text-muted">Homeowner</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="card-premium h-100">
+                        <div class="text-accent mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic text-muted">"My office productivity has tripled since they reorganized my filing and digital systems. Worth every penny."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="icon-box m-0 me-3" style="width: 50px; height: 50px;"><i class="bi bi-person"></i></div>
+                            <div>
+                                <div class="fw-bold">Mark Thompson</div>
+                                <div class="small text-muted">CEO, TechFlow</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="card-premium h-100">
+                        <div class="text-accent mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic text-muted">"Moving was so much easier with their help. They unpacked my entire kitchen and closets in just two days!"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="icon-box m-0 me-3" style="width: 50px; height: 50px;"><i class="bi bi-person"></i></div>
+                            <div>
+                                <div class="fw-bold">Emily Rodriguez</div>
+                                <div class="small text-muted">Private Client</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: FAQ -->
+    <section class="bg-alt py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center reveal mb-5">
+                        <span class="section-tag">COMMON QUESTIONS</span>
+                        <h2 class="display-5" style="font-family: 'Playfair Display', serif;">Everything You <span class="text-accent">Need to Know</span></h2>
+                    </div>
+                    <div class="accordion reveal" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How much does a session cost?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Pricing depends on the scope of the project. We offer both hourly rates and project-based packages. During your initial consultation, we'll provide a detailed estimate tailored to your needs.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do I need to buy storage bins beforehand?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Not at all! In fact, we recommend waiting until after the decluttering phase. We can source the perfect containers that fit your space and aesthetic once we know exactly what needs to be stored.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Will you make me throw everything away?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely not. You are always in control of what stays and what goes. Our job is to guide you through the process and help you make decisions that align with your goals for the space.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Contact -->
+    <section id="contact" class="py-5 bg-accent text-white position-relative overflow-hidden">
+        <div class="container py-5 reveal">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-7">
+                    <h2 class="display-4" style="font-family: 'Playfair Display', serif;">Ready to start your journey <br>to absolute peace?</h2>
+                    <p class="lead mt-3 opacity-75">Book a complimentary 15-minute consultation today and discover the power of an organized life.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="dashboard.html" class="btn btn-light btn-lg px-5 py-3 fw-bold">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand mb-4 d-inline-block" href="#">
+                        <i class="bi bi-layers-half text-accent"></i>
+                        <span style="font-family: 'Playfair Display', serif;">SEREIN SPACES</span>
+                    </a>
+                    <p class="text-muted">Elevating your quality of life through bespoke organization and sustainable decluttering systems. Experience the peace of mind you deserve.</p>
+                    <div class="social-links d-flex gap-3 mt-4">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="fw-bold mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="dashboard.html">Booking</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p class="text-muted mb-4">Get organizing tips and exclusive offers directly in your inbox.</p>
+                    <form id="newsletterForm">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required style="border-radius: 8px 0 0 8px; padding: 12px 20px;">
+                            <button class="btn btn-custom" type="submit" style="border-radius: 0 8px 8px 0;">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4 opacity-50">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted small mb-md-0">© 2026 Serein Spaces. Crafting order from chaos.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end align-items-center gap-3">
+                         <button class="btn btn-sm btn-outline-secondary" onclick="toggleRTL()">RTL/LTR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="btn btn-custom rounded-circle">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

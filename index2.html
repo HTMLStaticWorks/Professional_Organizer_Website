@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> | Corporate Office Organizer</title>
+    <title>Serein | Corporate Office Organizer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -20,6 +21,7 @@
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-stack text-accent"></i>
+                <span class="ms-2 fw-bold" style="font-family: 'Playfair Display', serif;">Serein</span>
             </a>
             
             <div class="d-flex align-items-center d-lg-none gap-2">
@@ -36,8 +38,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
                         <ul class="dropdown-menu border-0 shadow-sm mt-3 rounded-3">
-                            <li><a class="dropdown-item py-2 fw-semibold" href="index.html">Residential</a></li>
-                            <li><a class="dropdown-item py-2 fw-semibold" href="index2.html">Corporate</a></li>
+                            <li><a class="dropdown-item py-2 fw-semibold" href="index.html">Classical (Home 1)</a></li>
+                            <li><a class="dropdown-item py-2 fw-semibold" href="index2.html">Premium (Home 2)</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -45,7 +47,10 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-sm rtl-toggle" onclick="toggleRTL()" title="Toggle RTL">
+                        <i class="bi bi-translate"></i>
+                    </button>
                     <button class="btn btn-sm" id="themeToggle" title="Toggle Theme">
                         <i class="bi bi-moon-stars"></i>
                     </button>
@@ -83,37 +88,35 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7 reveal">
-                    <span class="section-tag">ELEVATE YOUR WORKSPACE</span>
-                    <h1 class="display-1 mb-4" style="font-family: 'Playfair Display', serif;">Elite Efficiency, <br><span class="text-accent">Bespoke Order.</span></h1>
-                    <p class="lead mb-5 text-muted" style="font-size: 1.5rem;">The premium choice for corporate and high-end home office organization systems designed for maximum output.</p>
-                    <div class="d-flex flex-wrap gap-4 justify-content-start">
-                        <a href="services.html" class="btn btn-primary-brand px-5" style="height: 60px; font-size: 1.1rem;">Elite Services</a>
-                        <a href="contact.html" class="btn btn-secondary-brand px-5" style="height: 60px; font-size: 1.1rem;">Request Consultation</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 reveal">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 shadow-lg" alt="Organized Space">
-                        <div class="position-absolute bottom-0 start-0 translate-middle-x d-none d-xl-block" style="margin-left: 20px; margin-bottom: -30px;">
-                            <div class="card-premium py-3 px-4 shadow-lg border-0 bg-white">
-                                <div class="d-flex align-items-center gap-3">
-                                    <i class="bi bi-star-fill text-warning fs-3"></i>
-                                    <div>
-                                        <div class="fw-bold text-dark">Top Rated</div>
-                                        <div class="small text-muted">Luxury Organizers</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Hero Section -->
+    <section class="hero position-relative overflow-hidden" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat; min-height: 90vh; display: flex; align-items: center;">
+        <div class="container py-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 reveal">
+                    <span class="section-tag mb-4 shadow-sm px-3 py-1 bg-white rounded-pill d-inline-block text-dark">PREMIUM CORPORATE SYSTEMS</span>
+                    <h1 class="display-1 text-white mb-4 fw-bold" style="font-family: 'Playfair Display', serif;">The Gold Standard <br>of <span class="text-accent italic">Bespoke Order</span></h1>
+                    <p class="lead text-white-50 mx-auto mb-5" style="max-width: 800px; font-size: 1.5rem;">The world's leading professional organization service for corporate executives and elite residential estates.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-4">
+                        <a href="services.html" class="btn btn-primary-brand px-5 shadow-lg btn-lg">Elite Collection</a>
+                        <a href="contact.html" class="btn btn-outline-light px-5 btn-lg" style="border-width: 2px;">Private Consultation</a>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Scroll Down Mouse -->
+        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 d-none d-md-block">
+            <div style="width: 30px; height: 50px; border: 2px solid rgba(255,255,255,0.3); border-radius: 20px; position: relative;">
+                <div style="width: 6px; height: 10px; background: white; border-radius: 3px; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); animation: scrollMouse 2s infinite;"></div>
+            </div>
+        </div>
     </section>
+
+    <style>
+    @keyframes scrollMouse {
+        0% { transform: translate(-50%, 0); opacity: 1; }
+        100% { transform: translate(-50%, 20px); opacity: 0; }
+    }
+    </style>
 
     <!-- Section: Stats -->
     <section class="py-5 bg-alt">
@@ -165,7 +168,7 @@
                 <div class="col-lg-6 reveal">
                     <span class="section-tag">OUR STORY</span>
                     <h2 class="display-5 mt-2" style="font-family: 'Playfair Display', serif;">More than just cleaning, <br>we create <span class="text-accent">efficient workflows.</span></h2>
-                    <p class="text-muted mt-4 mb-4" style="font-size: 1.1rem;">At , we believe that an organized environment is the foundation for a peaceful mind. Our mission is to transform cluttered chaos into harmonious order through systems that are as beautiful as they are functional.</p>
+                    <p class="text-muted mt-4 mb-4" style="font-size: 1.1rem;">At Serein, we believe that an organized environment is the foundation for a peaceful mind. Our mission is to transform cluttered chaos into harmonious order through systems that are as beautiful as they are functional.</p>
                     <ul class="list-unstyled mt-4 d-grid gap-3">
                         <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-accent fs-4 me-3"></i> <span><strong>Personalized Space Planning</strong> - Tailored to your lifestyle.</span></li>
                         <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-accent fs-4 me-3"></i> <span><strong>Hands-on Decluttering</strong> - Stress-free transition support.</span></li>
@@ -442,7 +445,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a class="navbar-brand mb-4 d-inline-block" href="#">
                         <i class="bi bi-stack text-accent"></i>
-                        <span style="font-family: 'Playfair Display', serif;"></span>
+                        <span class="ms-2 fw-bold" style="font-family: 'Playfair Display', serif;">Serein</span>
                     </a>
                     <p class="text-muted">Elevating your quality of life through bespoke organization and sustainable decluttering systems. Experience the peace of mind you deserve.</p>
                     <div class="social-links d-flex gap-3 mt-4">
@@ -484,7 +487,7 @@
             <hr class="mt-5 mb-4 opacity-50">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="text-muted small mb-md-0">© 2026 . Crafting order from chaos.</p>
+                    <p class="text-muted small mb-md-0">© 2026 Serein. Crafting order from chaos.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="d-flex justify-content-md-end align-items-center gap-3">

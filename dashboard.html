@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | </title>
+    <title>Dashboard | Serein</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -51,8 +52,9 @@
     <!-- Sidebar -->
     <div class="sidebar d-flex flex-column" id="sidebar">
         <div class="px-4 py-4 mb-3 border-bottom border-light">
-            <a class="navbar-brand text-accent fs-4" href="index.html">
-                <i class="bi bi-stack text-accent"></i>
+            <a class="navbar-brand text-accent fs-4 d-flex align-items-center gap-2" href="index.html">
+                <i class="bi bi-stack"></i>
+                <span class="fw-bold" style="font-family: 'Playfair Display', serif;">Serein</span>
             </a>
         </div>
         <nav class="flex-grow-1">
@@ -73,7 +75,7 @@
                     <div class="text-muted text-truncate" style="max-width: 120px;">Premium Member</div>
                 </div>
             </div>
-            <a href="login.html" class="btn btn-sm btn-outline-danger w-100">Logout</a>
+            <a href="javascript:void(0)" onclick="logout()" class="btn btn-sm btn-outline-danger w-100">Logout</a>
         </div>
     </div>
 
@@ -90,6 +92,9 @@
                     <p class="small text-muted mb-0">Welcome back, John! Here's your workspace overview.</p>
                 </div>
                 <div class="ms-auto d-flex align-items-center gap-2">
+                    <button class="btn btn-sm" onclick="toggleRTL()" title="Toggle RTL">
+                        <i class="bi bi-translate"></i>
+                    </button>
                     <button class="btn btn-sm" id="themeToggle" title="Toggle Theme">
                         <i class="bi bi-moon-stars"></i>
                     </button>

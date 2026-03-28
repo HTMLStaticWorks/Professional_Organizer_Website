@@ -21,9 +21,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateThemeIcons(theme) {
         getThemeToggles().forEach(toggle => {
-            toggle.innerHTML = theme === 'light' ? '<i class="bi bi-moon-stars"></i>' : '<i class="bi bi-sun"></i>';
+            if (theme === 'dark') {
+                toggle.innerHTML = '<i class="bi bi-sun"></i>';
+                toggle.style.color = '#fbbf24'; // Amber for sun
+            } else {
+                toggle.innerHTML = '<i class="bi bi-moon-stars"></i>';
+                toggle.style.color = 'var(--text-main)';
+            }
         });
     }
+
+    // Active Link Highlighting
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && currentPath.includes(href) && href !== 'index.html' && href !== '#') {
+            link.classList.add('active');
+            // If it's a dropdown item, also highlight the parent dropdown
+            const parentDropdown = link.closest('.dropdown-menu');
+            if (parentDropdown) {
+                const toggle = parentDropdown.previousElementSibling;
+                if (toggle) toggle.classList.add('active');
+            }
+        } else if (href === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('index.html'))) {
+            link.classList.add('active');
+        }
+    });
 
     // Scroll Reveal Animation
     const revealElements = document.querySelectorAll('.reveal');
@@ -78,4 +102,9 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+    // Logout Redirect
+    window.logout = function() {
+        // Clear any session data if necessary
+        window.location.href = 'index.html';
+    };
 });

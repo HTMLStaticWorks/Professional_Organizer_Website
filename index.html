@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> | Professional Home & Office Organizer</title>
+    <title>Serein | Professional Home & Office Organizer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -20,6 +21,7 @@
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-stack text-accent"></i>
+                <span class="ms-2 fw-bold" style="font-family: 'Playfair Display', serif;">Serein</span>
             </a>
             
             <div class="d-flex align-items-center d-lg-none gap-2">
@@ -36,8 +38,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
                         <ul class="dropdown-menu border-0 shadow-sm mt-3 rounded-3">
-                            <li><a class="dropdown-item py-2 fw-semibold" href="index.html">Residential</a></li>
-                            <li><a class="dropdown-item py-2 fw-semibold" href="index2.html">Corporate</a></li>
+                            <li><a class="dropdown-item py-2 fw-semibold" href="index.html">Classical (Home 1)</a></li>
+                            <li><a class="dropdown-item py-2 fw-semibold" href="index2.html">Premium (Home 2)</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -45,7 +47,10 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-sm rtl-toggle" onclick="toggleRTL()" title="Toggle RTL">
+                        <i class="bi bi-translate"></i>
+                    </button>
                     <button class="btn btn-sm" id="themeToggle" title="Toggle Theme">
                         <i class="bi bi-moon-stars"></i>
                     </button>
@@ -83,32 +88,17 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7 reveal">
-                    <span class="section-tag">ELEVATE YOUR ENVIRONMENT</span>
-                    <h1 class="display-2" style="font-family: 'Playfair Display', serif;">Reclaim Your Calm, <br><span class="text-accent">Organize Your Life.</span></h1>
-                    <p class="lead mb-5 text-muted" style="font-size: 1.25rem;">Bespoke home and office organization services designed to bring functional beauty and lasting peace to your most cherished spaces.</p>
-                    <div class="d-flex flex-wrap gap-3 justify-content-start">
-                        <a href="services.html" class="btn btn-primary-brand px-5">View Services</a>
-                        <a href="contact.html" class="btn btn-secondary-brand px-5">Consultation</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 reveal">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1594488651083-201664cc7f3f?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 shadow-lg" alt="Organized Space">
-                        <div class="position-absolute bottom-0 start-0 translate-middle-x d-none d-xl-block" style="margin-left: 20px; margin-bottom: -30px;">
-                            <div class="card-premium py-3 px-4 shadow-lg border-0 bg-white">
-                                <div class="d-flex align-items-center gap-3">
-                                    <i class="bi bi-star-fill text-warning fs-3"></i>
-                                    <div>
-                                        <div class="fw-bold text-dark">Top Rated</div>
-                                        <div class="small text-muted">Luxury Organizers</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Hero Section -->
+    <section class="hero position-relative overflow-hidden" style="background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat; min-height: 85vh; display: flex; align-items: center;">
+        <div class="container py-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 reveal">
+                    <span class="section-tag mb-4 shadow-sm px-3 py-1 bg-white rounded-pill d-inline-block">ESTABLISHED 2016</span>
+                    <h1 class="display-1 text-white mb-4 fw-bold" style="font-family: 'Playfair Display', serif;">The Art of <span class="text-accent italic">Classical</span> Living</h1>
+                    <p class="lead text-white-50 mx-auto mb-5" style="max-width: 800px; font-size: 1.25rem;">Dedicated to the preservation of elegance through meticulous organization. We curate environments that celebrate tradition and simplify your daily existence.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="services.html" class="btn btn-primary-brand px-5 shadow-lg">Our Collection</a>
+                        <a href="contact.html" class="btn btn-outline-light btn-secondary-brand px-5" style="border-color: white; color: white !important;">Private Consultation</a>
                     </div>
                 </div>
             </div>
@@ -153,20 +143,14 @@
             <div class="row align-items-center py-5 g-5">
                 <div class="col-lg-6 reveal">
                     <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1591123120675-6f7f1a90f5b1?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 shadow" alt="Professional Organizer">
-                        <div class="position-absolute top-50 start-100 translate-middle d-none d-lg-block">
-                             <div class="bg-accent text-white p-4 rounded-4 shadow-lg" style="width: 200px;">
-                                <h3 class="h1 mb-0 fw-bold">100%</h3>
-                                <p class="mb-0 small">Sustainable Methods</p>
-                             </div>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1594488651083-201664cc7f3f?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 shadow-lg" alt="Professional Organizer Working">
                     </div>
                 </div>
-                <div class="col-lg-6 reveal">
+                <div class="col-lg-6 reveal text-center text-lg-start">
                     <span class="section-tag">OUR STORY</span>
                     <h2 class="display-5 mt-2" style="font-family: 'Playfair Display', serif;">More than just cleaning, <br>we create <span class="text-accent">sustainable systems.</span></h2>
-                    <p class="text-muted mt-4 mb-4" style="font-size: 1.1rem;">At , we believe that an organized environment is the foundation for a peaceful mind. Our mission is to transform cluttered chaos into harmonious order through systems that are as beautiful as they are functional.</p>
-                    <ul class="list-unstyled mt-4 d-grid gap-3">
+                    <p class="text-muted mt-4 mb-4" style="font-size: 1.1rem;">At Serein, we believe that an organized environment is the foundation for a peaceful mind. Our mission is to transform cluttered chaos into harmonious order through systems that are as beautiful as they are functional.</p>
+                    <ul class="list-unstyled mt-4 d-grid gap-3 text-start">
                         <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-accent fs-4 me-3"></i> <span><strong>Personalized Space Planning</strong> - Tailored to your lifestyle.</span></li>
                         <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-accent fs-4 me-3"></i> <span><strong>Hands-on Decluttering</strong> - Stress-free transition support.</span></li>
                         <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-accent fs-4 me-3"></i> <span><strong>Maintenance Strategies</strong> - Systems that actually stick.</span></li>
@@ -183,31 +167,31 @@
                 <span class="section-tag">HOW IT WORKS</span>
                 <h2 class="display-5" style="font-family: 'Playfair Display', serif;">Your Journey to <span class="text-accent">Serenity</span></h2>
             </div>
-            <div class="row g-4 mt-4">
-                <div class="col-md-3 reveal">
-                    <div class="card-premium">
-                        <div class="icon-box">01</div>
+            <div class="row g-4 mt-4 text-center">
+                <div class="col-md-3 col-sm-6 reveal">
+                    <div class="card-premium h-100">
+                        <div class="icon-box mx-auto">01</div>
                         <h4>Consultation</h4>
                         <p class="text-muted small">We discuss your goals, challenges, and vision for the space during a complimentary call.</p>
                     </div>
                 </div>
-                <div class="col-md-3 reveal">
-                    <div class="card-premium">
-                        <div class="icon-box">02</div>
+                <div class="col-md-3 col-sm-6 reveal">
+                    <div class="card-premium h-100">
+                        <div class="icon-box mx-auto">02</div>
                         <h4>Assessment</h4>
                         <p class="text-muted small">A deep dive into your environment to identify bottlenecks and planning opportunities.</p>
                     </div>
                 </div>
-                <div class="col-md-3 reveal">
-                    <div class="card-premium">
-                        <div class="icon-box">03</div>
+                <div class="col-md-3 col-sm-6 reveal">
+                    <div class="card-premium h-100">
+                        <div class="icon-box mx-auto">03</div>
                         <h4>Transformation</h4>
                         <p class="text-muted small">Hands-on decluttering and implementation of our custom organizing systems.</p>
                     </div>
                 </div>
-                <div class="col-md-3 reveal">
-                    <div class="card-premium">
-                        <div class="icon-box">04</div>
+                <div class="col-md-3 col-sm-6 reveal">
+                    <div class="card-premium h-100">
+                        <div class="icon-box mx-auto">04</div>
                         <h4>Maintenance</h4>
                         <p class="text-muted small">We provide you with the tools and knowledge to keep your space perfect forever.</p>
                     </div>
@@ -224,43 +208,40 @@
                 <h2 class="display-5" style="font-family: 'Playfair Display', serif;">Tailored Solutions for <span class="text-accent">Modern Living</span></h2>
                 <p class="text-muted">Premium organization for every corner of your life.</p>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 text-center">
                 <div class="col-md-4 reveal">
-                    <div class="card-premium">
-                        <div class="icon-box"><i class="bi bi-house-door"></i></div>
-                        <h4>Home Organization</h4>
-                        <p class="text-muted">Kitchens, pantries, closets, and common areas optimized for your lifestyle and aesthetic preferences.</p>
+                    <div class="card-premium h-100 p-4 p-md-5">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400" alt="Home Organization" class="img-fluid rounded-3 mb-4 shadow-sm" style="height: 180px; object-fit: cover; width: 100%;">
+                        <h4 class="fw-bold mb-3">Residential Mastery</h4>
+                        <p class="text-muted small">Kitchens, pantries, closets, and common areas optimized for your lifestyle and aesthetic preferences.</p>
                         <hr class="my-4 opacity-50">
-                        <ul class="list-unstyled small text-muted d-grid gap-2">
+                        <ul class="list-unstyled small text-muted d-grid gap-2 text-start">
                             <li><i class="bi bi-arrow-right text-accent me-2"></i> Pantry Curation</li>
                             <li><i class="bi bi-arrow-right text-accent me-2"></i> Closet Editing</li>
-                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Toy Room Design</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-4 reveal">
-                    <div class="card-premium">
-                        <div class="icon-box"><i class="bi bi-briefcase"></i></div>
-                        <h4>Office Solutions</h4>
-                        <p class="text-muted">Workspace decluttering and digital organization to enhance clarity, focus, and overall productivity.</p>
+                    <div class="card-premium h-100 p-4 p-md-5 border-accent" style="border-width: 2px;">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=400" alt="Office Solutions" class="img-fluid rounded-3 mb-4 shadow-sm" style="height: 180px; object-fit: cover; width: 100%;">
+                        <h4 class="fw-bold mb-3">Corporate Excellence</h4>
+                        <p class="text-muted small">Workspace decluttering and digital organization to enhance clarity, focus, and overall productivity.</p>
                         <hr class="my-4 opacity-50">
-                        <ul class="list-unstyled small text-muted d-grid gap-2">
+                        <ul class="list-unstyled small text-muted d-grid gap-2 text-start">
                             <li><i class="bi bi-arrow-right text-accent me-2"></i> File Management</li>
-                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Desktop Workflow</li>
-                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Storage Audits</li>
+                            <li><i class="bi bi-arrow-right text-accent me-2"></i> Workflow Design</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-4 reveal">
-                    <div class="card-premium">
-                        <div class="icon-box"><i class="bi bi-truck"></i></div>
-                        <h4>Relocation Support</h4>
-                        <p class="text-muted">Complete white-glove service for packing, unpacking, and setting up your new home from day one.</p>
+                    <div class="card-premium h-100 p-4 p-md-5">
+                        <img src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&q=80&w=400" alt="Relocation" class="img-fluid rounded-3 mb-4 shadow-sm" style="height: 180px; object-fit: cover; width: 100%;">
+                        <h4 class="fw-bold mb-3">Relocation Support</h4>
+                        <p class="text-muted small">Complete white-glove service for packing, unpacking, and setting up your new home from day one.</p>
                         <hr class="my-4 opacity-50">
-                        <ul class="list-unstyled small text-muted d-grid gap-2">
+                        <ul class="list-unstyled small text-muted d-grid gap-2 text-start">
                             <li><i class="bi bi-arrow-right text-accent me-2"></i> Pre-move Purge</li>
                             <li><i class="bi bi-arrow-right text-accent me-2"></i> Unpacking & Set-up</li>
-                            <li><i class="bi bi-arrow-right text-accent me-2"></i> New Home Mapping</li>
                         </ul>
                     </div>
                 </div>
@@ -307,18 +288,14 @@
                 <h2 class="display-5" style="font-family: 'Playfair Display', serif;">What Our <span class="text-accent">Clients Say</span></h2>
             </div>
             <div class="row g-4">
-                <div class="col-md-4 reveal">
-                    <div class="card-premium h-100">
+                <div class="col-md-4 col-sm-6 reveal">
+                    <div class="card-premium h-100 p-4 p-md-5 text-center">
                         <div class="text-accent mb-3">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                         </div>
                         <p class="fst-italic text-muted">"I can finally breathe in my own home. The pantry system they created is a game changer for our busy family of five!"</p>
-                        <div class="d-flex align-items-center mt-4">
-                            <div class="icon-box m-0 me-3" style="width: 50px; height: 50px;"><i class="bi bi-person"></i></div>
+                        <div class="d-flex flex-column align-items-center mt-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" alt="Sarah" class="rounded-circle shadow-sm mb-3" style="width: 60px; height: 60px; object-fit: cover;">
                             <div>
                                 <div class="fw-bold">Sarah Jenkins</div>
                                 <div class="small text-muted">Homeowner</div>
@@ -326,18 +303,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 reveal">
-                    <div class="card-premium h-100">
+                <div class="col-md-4 col-sm-6 reveal">
+                    <div class="card-premium h-100 p-4 p-md-5 text-center shadow-lg">
                         <div class="text-accent mb-3">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                         </div>
                         <p class="fst-italic text-muted">"My office productivity has tripled since they reorganized my filing and digital systems. Worth every penny."</p>
-                        <div class="d-flex align-items-center mt-4">
-                            <div class="icon-box m-0 me-3" style="width: 50px; height: 50px;"><i class="bi bi-person"></i></div>
+                        <div class="d-flex flex-column align-items-center mt-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Mark" class="rounded-circle shadow-sm mb-3" style="width: 60px; height: 60px; object-fit: cover;">
                             <div>
                                 <div class="fw-bold">Mark Thompson</div>
                                 <div class="small text-muted">CEO, TechFlow</div>
@@ -345,18 +318,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 reveal">
-                    <div class="card-premium h-100">
+                <div class="col-md-4 col-sm-6 reveal mx-auto">
+                    <div class="card-premium h-100 p-4 p-md-5 text-center">
                         <div class="text-accent mb-3">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                         </div>
                         <p class="fst-italic text-muted">"Moving was so much easier with their help. They unpacked my entire kitchen and closets in just two days!"</p>
-                        <div class="d-flex align-items-center mt-4">
-                            <div class="icon-box m-0 me-3" style="width: 50px; height: 50px;"><i class="bi bi-person"></i></div>
+                        <div class="d-flex flex-column align-items-center mt-4">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Emily" class="rounded-circle shadow-sm mb-3" style="width: 60px; height: 60px; object-fit: cover;">
                             <div>
                                 <div class="fw-bold">Emily Rodriguez</div>
                                 <div class="small text-muted">Private Client</div>
@@ -442,6 +411,7 @@
                 <div class="col-lg-4 col-md-6">
                     <a class="navbar-brand mb-4 d-inline-flex" href="index.html">
                     <i class="bi bi-stack text-accent"></i>
+                    <span class="ms-2 fw-bold" style="font-family: 'Playfair Display', serif;">Serein</span>
                 </a>
                     <p class="text-muted">Elevating your quality of life through bespoke organization and sustainable decluttering systems. Experience the peace of mind you deserve.</p>
                     <div class="social-links d-flex gap-3 mt-4">
@@ -483,7 +453,7 @@
             <hr class="mt-5 mb-4 opacity-50">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="text-muted small mb-md-0">© 2026 . Crafting order from chaos.</p>
+                    <p class="text-muted small mb-md-0">© 2026 Serein. Crafting order from chaos.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="d-flex justify-content-md-end align-items-center gap-3">

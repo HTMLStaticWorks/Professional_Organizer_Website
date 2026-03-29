@@ -28,12 +28,14 @@
                         class="text-accent">Reset</span></span>
             </a>
 
-            <div class="d-flex align-items-center d-lg-none gap-2">
+            <div class="d-flex align-items-center d-lg-none gap-1 order-lg-last">
+                <button class="btn btn-sm rtl-toggle" onclick="toggleRTL()" title="Toggle RTL">
+                    <i class="bi bi-translate"></i>
+                </button>
                 <button class="btn btn-sm btn-outline-secondary" id="themeToggleMobile">
                     <i class="bi bi-moon-stars"></i>
                 </button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar">
+                <button class="navbar-toggler border-0 ms-1 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -62,23 +64,25 @@
     </nav>
 
     <!-- Mobile Offcanvas -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
+                <span class="brand-logo">SR</span> Space Reset
+            </h5>
+            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="index2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded active" href="index.html">Home 1</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="index2.html">Home 2</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="services.html">Services</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="about.html">About</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="contact.html">Contact</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="dashboard.html">Dashboard</a></li>
             </ul>
             <div class="mt-4 d-grid gap-2">
-                <a href="login.html" class="btn btn-primary-brand">Login</a>
-                <a href="signup.html" class="btn btn-secondary-brand">Signup</a>
+                <a href="login.html" class="btn btn-secondary-brand">Login</a>
+                <a href="signup.html" class="btn btn-primary-brand">Join Now</a>
             </div>
         </div>
     </div>
@@ -434,7 +438,7 @@
             <div class="row g-4">
                 <div class="col-md-6 reveal">
                     <div class="rounded-4 overflow-hidden shadow-lg position-relative">
-                        <img src="https://images.unsplash.com/photo-1584622781561-39209587428c?fm=jpg&fit=crop&q=80&w=800"
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80&w=800"
                             class="img-fluid w-100" alt="Before" style="height: 400px; object-fit: cover;">
                         <div class="position-absolute top-0 start-0 m-3">
                             <span class="badge bg-secondary px-3 py-2">BEFORE</span>
@@ -443,7 +447,7 @@
                 </div>
                 <div class="col-md-6 reveal">
                     <div class="rounded-4 overflow-hidden shadow-lg position-relative">
-                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?fm=jpg&fit=crop&q=80&w=800"
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800"
                             class="img-fluid w-100" alt="After" style="height: 400px; object-fit: cover;">
                         <div class="position-absolute top-0 start-0 m-3">
                             <span class="badge bg-accent px-3 py-2">AFTER</span>

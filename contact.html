@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -23,11 +23,14 @@
                 <span class="brand-logo">SR</span><span class="fw-bold">Space <span class="text-accent">Reset</span></span>
             </a>
             
-            <div class="d-flex align-items-center d-lg-none gap-2">
+            <div class="d-flex align-items-center d-lg-none gap-1 order-lg-last">
+                <button class="btn btn-sm rtl-toggle" onclick="toggleRTL()" title="Toggle RTL">
+                    <i class="bi bi-translate"></i>
+                </button>
                 <button class="btn btn-sm btn-outline-secondary" id="themeToggleMobile">
                     <i class="bi bi-moon-stars"></i>
                 </button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <button class="navbar-toggler border-0 ms-1 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -56,29 +59,35 @@
     </nav>
 
     <!-- Mobile Offcanvas -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
+                <span class="brand-logo">SR</span> Space Reset
+            </h5>
+            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="index2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="index.html">Home 1</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="index2.html">Home 2</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="services.html">Services</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="about.html">About</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded active" href="contact.html">Contact</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="dashboard.html">Dashboard</a></li>
             </ul>
+            <div class="mt-4 d-grid gap-2">
+                <a href="login.html" class="btn btn-secondary-brand">Login</a>
+                <a href="signup.html" class="btn btn-primary-brand">Join Now</a>
+            </div>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="py-5 bg-alt">
+    <section class="position-relative overflow-hidden" style="background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?fm=jpg&fit=crop&q=80&w=1600') center/cover no-repeat; min-height: 40vh; display: flex; align-items: center;">
         <div class="container py-5 text-center reveal">
-            <span class="section-tag">GET IN TOUCH</span>
-            <h1 class="display-3 mb-4" style="font-family: 'Playfair Display', serif;">Let's Start Your <span class="text-accent">Transformation</span></h1>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Ready to reclaim your space? Reach out to schedule a consultation or ask us anything about our organizing services.</p>
+            <span class="section-tag mb-4 shadow-sm px-3 py-1 bg-white rounded-pill d-inline-block">GET IN TOUCH</span>
+            <h1 class="display-3 text-white mb-4" style="font-family: 'Playfair Display', serif;">Let's Start Your <span class="text-accent italic">Transformation</span></h1>
+            <p class="lead text-white-50 mx-auto" style="max-width: 700px;">Ready to reclaim your space? Reach out to schedule a consultation or ask us anything about our organizing services.</p>
         </div>
     </section>
 

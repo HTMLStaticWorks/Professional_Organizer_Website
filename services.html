@@ -23,11 +23,14 @@
                 <span class="brand-logo">SR</span><span class="fw-bold">Space <span class="text-accent">Reset</span></span>
             </a>
             
-            <div class="d-flex align-items-center d-lg-none gap-2">
+            <div class="d-flex align-items-center d-lg-none gap-1 order-lg-last">
+                <button class="btn btn-sm rtl-toggle" onclick="toggleRTL()" title="Toggle RTL">
+                    <i class="bi bi-translate"></i>
+                </button>
                 <button class="btn btn-sm btn-outline-secondary" id="themeToggleMobile">
                     <i class="bi bi-moon-stars"></i>
                 </button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <button class="navbar-toggler border-0 ms-1 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -56,29 +59,35 @@
     </nav>
 
     <!-- Mobile Offcanvas -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
+                <span class="brand-logo">SR</span> Space Reset
+            </h5>
+            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="index2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="index.html">Home 1</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="index2.html">Home 2</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded active" href="services.html">Services</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="about.html">About</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="contact.html">Contact</a></li>
+                <li class="nav-item mb-2"><a class="nav-link px-3 py-2 rounded" href="dashboard.html">Dashboard</a></li>
             </ul>
+            <div class="mt-4 d-grid gap-2">
+                <a href="login.html" class="btn btn-secondary-brand">Login</a>
+                <a href="signup.html" class="btn btn-primary-brand">Join Now</a>
+            </div>
         </div>
     </div>
 
     <!-- Page Header -->
-    <section class="bg-alt py-5">
+    <section class="position-relative overflow-hidden" style="background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?fm=jpg&fit=crop&q=80&w=1600') center/cover no-repeat; min-height: 40vh; display: flex; align-items: center;">
         <div class="container py-5 text-center reveal">
-            <span class="section-tag">OUR SERVICES</span>
-            <h1 class="display-3" style="font-family: 'Playfair Display', serif;">Bespoke <span class="text-accent">Organization</span> Solutions</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Professional, sustainable, and beautifully designed systems to simplify your environment and enhance your daily life.</p>
+            <span class="section-tag mb-4 shadow-sm px-3 py-1 bg-white rounded-pill d-inline-block">OUR SERVICES</span>
+            <h1 class="display-3 text-white mb-4" style="font-family: 'Playfair Display', serif;">Bespoke <span class="text-accent">Organization</span> Solutions</h1>
+            <p class="lead text-white-50 mx-auto" style="max-width: 700px;">Professional, sustainable, and beautifully designed systems to simplify your environment and enhance your daily life.</p>
         </div>
     </section>
 
@@ -133,7 +142,7 @@
                 <!-- Card 5 -->
                 <div class="col-lg-3 col-md-6 reveal">
                     <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
-                        <img src="https://images.unsplash.com/photo-1600585154526-70868f77341d?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Move-in Unpacking" style="height: 200px; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Move-in Unpacking" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Move-in Unpacking</h5>
                             <p class="small text-muted mb-4">Expert unpacking and systematic set-up to turn your new house into a functioning home quickly.</p>
@@ -155,7 +164,7 @@
                 <!-- Card 7 -->
                 <div class="col-lg-3 col-md-6 reveal">
                     <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
-                        <img src="https://images.unsplash.com/photo-1584622781561-39209587428c?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Garage & Storage" style="height: 200px; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1581428982868-e410dd047a90?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Garage & Storage" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Garage & Storage</h5>
                             <p class="small text-muted mb-4">Transforming chaotic storage areas into organized zones for tools, sports, and hobbies.</p>

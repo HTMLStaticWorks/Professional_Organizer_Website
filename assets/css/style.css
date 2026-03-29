@@ -172,9 +172,19 @@ label { color: var(--text-body); }
 
 /* Offcanvas */
 [data-theme="dark"] .offcanvas { background-color: var(--bg-main); color: var(--text-main); }
-[data-theme="dark"] .offcanvas .nav-link,
-[data-theme="dark"] .offcanvas .offcanvas-title { color: var(--text-main) !important; }
-[data-theme="dark"] .btn-close { filter: invert(1); }
+.offcanvas .nav-link { 
+    color: var(--text-main) !important; 
+    padding: 12px 20px;
+    margin: 4px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.offcanvas .nav-link.active {
+    background-color: var(--secondary);
+    color: #fff !important;
+}
+.offcanvas .btn-close { filter: invert(0.5); }
+[data-theme="dark"] .offcanvas .btn-close { filter: invert(1); }
 
 /* Dashboard specific */
 [data-theme="dark"] .main-content { background-color: var(--bg-alt); }
@@ -208,6 +218,7 @@ label { color: var(--text-body); }
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
 }
 .btn-primary-brand:hover { background-color: var(--secondary-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(16,185,129,0.3); }
 
@@ -223,6 +234,7 @@ label { color: var(--text-body); }
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
 }
 .btn-secondary-brand:hover { background-color: var(--secondary); color: #fff !important; border-color: var(--secondary); }
 
@@ -262,6 +274,19 @@ label { color: var(--text-body); }
     top: 0;
     z-index: 1100;
 }
+.navbar .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+@media (min-width: 992px) {
+    .navbar-collapse .d-flex {
+        margin-left: auto;
+    }
+    .navbar .navbar-nav {
+        margin: 0 auto;
+    }
+}
 .navbar + section { margin-top: 0; }
 
 .navbar-brand {
@@ -273,6 +298,7 @@ label { color: var(--text-body); }
     gap: 12px !important;
     letter-spacing: -0.04em !important;
     text-decoration: none !important;
+    white-space: nowrap;
 }
 
 [data-theme="dark"] .navbar-brand { color: var(--text-main) !important; }
@@ -300,6 +326,7 @@ label { color: var(--text-body); }
     position: relative;
     opacity: 0.8;
     font-size: 0.95rem;
+    white-space: nowrap;
 }
 .nav-link:hover, .nav-link.active { opacity: 1; color: var(--secondary) !important; }
 .nav-link.active::after {

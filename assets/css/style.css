@@ -22,7 +22,7 @@
     --radius-sm:      8px;
     --radius-md:      12px;
     --radius-lg:      16px;
-    --btn-height:     48px;
+    --btn-height:     54px;
     --icon-size:      40px;
 }
 
@@ -186,6 +186,24 @@ label { color: var(--text-body); }
 .offcanvas .btn-close { filter: invert(0.5); }
 [data-theme="dark"] .offcanvas .btn-close { filter: invert(1); }
 
+/* Hamburger Menu Visibility */
+.navbar-toggler-icon {
+    filter: none;
+    transition: var(--transition);
+}
+[data-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+}
+.navbar-toggler {
+    padding: 8px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+.navbar-toggler:active, .navbar-toggler:focus {
+    box-shadow: none;
+    background-color: rgba(16,185,129,0.1);
+}
+
 /* Dashboard specific */
 [data-theme="dark"] .main-content { background-color: var(--bg-alt); }
 [data-theme="dark"] .navbar-dashboard { background-color: var(--glass-bg) !important; border-color: var(--glass-border); }
@@ -260,6 +278,23 @@ label { color: var(--text-body); }
 
 /* ── 5. UTILITY ──────────────────────────────────────────────── */
 .text-accent { color: var(--secondary) !important; }
+
+.section-tag {
+    background-color: var(--bg-alt);
+    color: var(--secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: var(--shadow-sm);
+    text-transform: uppercase;
+}
+[data-theme="dark"] .section-tag {
+    background-color: rgba(52,211,153,0.1);
+    color: var(--secondary);
+}
 .bg-alt { background-color: var(--bg-alt); }
 
 /* ── 6. NAVBAR ───────────────────────────────────────────────── */
@@ -353,15 +388,22 @@ label { color: var(--text-body); }
 
 /* ── 7. HERO ─────────────────────────────────────────────────── */
 .hero { padding: 100px 0 80px; margin-top: -1px; }
-.hero h1 { font-size: 4rem; line-height: 1.15; color: #fff; margin-bottom: 24px; }
+.hero h1 { font-size: 5rem; line-height: 1.1; color: #fff; margin-bottom: 32px; font-weight: 800; }
+.hero .lead { font-size: 1.85rem !important; opacity: 0.9; line-height: 1.5; margin-bottom: 48px !important; }
+.hero .section-tag { font-size: 1rem; padding: 12px 24px !important; margin-bottom: 32px !important; }
 
 /* Keep hero buttons uniform in width */
 @media (min-width: 577px) {
     .hero .btn-primary-brand,
     .hero .btn-hero-outline,
-    .hero .btn-secondary-brand {
-        min-width: 260px;
-        margin: 10px;
+    .hero .btn-secondary-brand,
+    .hero .btn-light,
+    .hero .btn-lg {
+        min-width: 320px;
+        height: 72px;
+        margin: 12px;
+        font-size: 1.35rem;
+        border-radius: 12px;
     }
 }
 
@@ -423,7 +465,17 @@ section { padding: 80px 0; }
 }
 .card-premium h4, .card-premium h5 { color: var(--text-main); }
 .card-premium p, .card-premium small { color: var(--text-muted); }
-.card-premium:hover { box-shadow: var(--shadow-md); border-color: var(--secondary); }
+.card-premium:hover { 
+    box-shadow: var(--shadow-lg); 
+    border-color: var(--secondary); 
+    transform: translateY(-8px);
+}
+.card-premium:hover img {
+    transform: scale(1.05);
+}
+.card-premium img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 .text-center .btn-primary-brand, .text-center .btn-secondary-brand { margin: 8px; }
 
 /* Icon box */
@@ -451,15 +503,23 @@ footer p { color: var(--text-muted); }
 footer .navbar-brand { margin-bottom: 24px; }
 
 .social-links a {
-    width: 40px; height: 40px;
-    background-color: var(--bg-main);
+    width: 44px; height: 44px;
+    background-color: var(--bg-card);
     border: 1px solid var(--glass-border);
-    color: var(--primary);
+    color: var(--text-main);
     border-radius: var(--radius-sm);
     display: flex; align-items: center; justify-content: center;
     transition: var(--transition);
+    font-size: 1.1rem;
+    text-decoration: none;
 }
-.social-links a:hover { background-color: var(--secondary); color: #fff; border-color: var(--secondary); }
+.social-links a:hover { 
+    background-color: var(--secondary); 
+    color: #fff !important; 
+    border-color: var(--secondary); 
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(16,185,129,0.2);
+}
 
 /* ── 11. DASHBOARD ───────────────────────────────────────────── */
 .sidebar {

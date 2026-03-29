@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Serein</title>
+    <title>Our Services | Space Reset</title>
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,8 +20,7 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="bi bi-stack text-accent"></i>
-                <span class="ms-2 fw-bold" style="font-family: 'Playfair Display', serif;">Serein</span>
+                <span class="brand-logo">SR</span><span class="fw-bold">Space <span class="text-accent">Reset</span></span>
             </a>
             
             <div class="d-flex align-items-center d-lg-none gap-2">
@@ -35,13 +34,8 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-                        <ul class="dropdown-menu border-0 shadow-sm mt-3 rounded-3">
-                            <li><a class="dropdown-item py-2 fw-semibold" href="index.html">Classical (Home 1)</a></li>
-                            <li><a class="dropdown-item py-2 fw-semibold" href="index2.html">Premium (Home 2)</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -61,6 +55,24 @@
         </div>
     </nav>
 
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="index2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+
     <!-- Page Header -->
     <section class="bg-alt py-5">
         <div class="container py-5 text-center reveal">
@@ -76,89 +88,89 @@
             <div class="row g-4">
                 <!-- Card 1 -->
                 <div class="col-lg-3 col-md-6 reveal">
-                    <div class="card-premium p-0 h-100 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Residential Decluttering" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                    <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Residential Decluttering" style="height: 200px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Residential Decluttering</h5>
                             <p class="small text-muted mb-4">Sorting through your belongings to keep what you love and let go of the rest with compassion.</p>
-                            <a href="#" class="btn btn-secondary-brand btn-sm w-100">Learn More</a>
+                            <a href="#" class="btn btn-secondary-brand btn-sm w-100 mt-auto">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="col-lg-3 col-md-6 reveal">
-                    <div class="card-premium p-0 h-100 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Kitchen & Pantry" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                    <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Kitchen & Pantry" style="height: 200px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Kitchen & Pantry</h5>
                             <p class="small text-muted mb-4">Creating functional zones and meal-prep friendly systems for your culinary heart of the home.</p>
-                            <a href="#" class="btn btn-secondary-brand btn-sm w-100">Learn More</a>
+                            <a href="#" class="btn btn-secondary-brand btn-sm w-100 mt-auto">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 3 -->
                 <div class="col-lg-3 col-md-6 reveal">
-                    <div class="card-premium p-0 h-100 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Closet Organization" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                    <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Closet Organization" style="height: 200px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Closet Organization</h5>
                             <p class="small text-muted mb-4">Maximizing your wardrobe space and creating visibility for your favorite outfits and accessories.</p>
-                            <a href="#" class="btn btn-secondary-brand btn-sm w-100">Learn More</a>
+                            <a href="#" class="btn btn-secondary-brand btn-sm w-100 mt-auto">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 4 -->
                 <div class="col-lg-3 col-md-6 reveal">
-                    <div class="card-premium p-0 h-100 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Home Office" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                    <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Home Office" style="height: 200px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Home Office Set-up</h5>
                             <p class="small text-muted mb-4">Designing a workspace that encourages focus, productivity, and peace of mind during work hours.</p>
-                            <a href="#" class="btn btn-secondary-brand btn-sm w-100">Learn More</a>
+                            <a href="#" class="btn btn-secondary-brand btn-sm w-100 mt-auto">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 5 -->
                 <div class="col-lg-3 col-md-6 reveal">
-                    <div class="card-premium p-0 h-100 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Move-in Unpacking" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                    <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1600585154526-70868f77341d?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Move-in Unpacking" style="height: 200px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Move-in Unpacking</h5>
                             <p class="small text-muted mb-4">Expert unpacking and systematic set-up to turn your new house into a functioning home quickly.</p>
-                            <a href="#" class="btn btn-secondary-brand btn-sm w-100">Learn More</a>
+                            <a href="#" class="btn btn-secondary-brand btn-sm w-100 mt-auto">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 6 -->
                 <div class="col-lg-3 col-md-6 reveal">
-                    <div class="card-premium p-0 h-100 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Paper Management" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                    <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Paper Management" style="height: 200px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Paper Management</h5>
                             <p class="small text-muted mb-4">Streamlining files, mail, and vital documents into an easy-to-use, sustainable filing system.</p>
-                            <a href="#" class="btn btn-secondary-brand btn-sm w-100">Learn More</a>
+                            <a href="#" class="btn btn-secondary-brand btn-sm w-100 mt-auto">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 7 -->
                 <div class="col-lg-3 col-md-6 reveal">
-                    <div class="card-premium p-0 h-100 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544911845-1f34a3ea3db3?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Garage & Storage" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                    <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1584622781561-39209587428c?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Garage & Storage" style="height: 200px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Garage & Storage</h5>
                             <p class="small text-muted mb-4">Transforming chaotic storage areas into organized zones for tools, sports, and hobbies.</p>
-                            <a href="#" class="btn btn-secondary-brand btn-sm w-100">Learn More</a>
+                            <a href="#" class="btn btn-secondary-brand btn-sm w-100 mt-auto">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 8 -->
                 <div class="col-lg-3 col-md-6 reveal">
-                    <div class="card-premium p-0 h-100 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400" class="w-100" alt="Digital Decluttering" style="height: 200px; object-fit: cover;">
-                        <div class="p-4">
+                    <div class="card-premium p-0 h-100 overflow-hidden d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?fm=jpg&fit=crop&q=80&w=400" class="w-100" alt="Digital Decluttering" style="height: 200px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h5 class="fw-bold mb-3">Digital Decluttering</h5>
                             <p class="small text-muted mb-4">Cleaning up your digital life, from overwhelmed inboxes to systematic photo organization.</p>
-                            <a href="#" class="btn btn-secondary-brand btn-sm w-100">Learn More</a>
+                            <a href="#" class="btn btn-secondary-brand btn-sm w-100 mt-auto">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -225,8 +237,7 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <a class="navbar-brand mb-4 d-inline-block" href="#">
-                        <i class="bi bi-stack text-accent"></i>
-                        <span class="ms-2 fw-bold" style="font-family: 'Playfair Display', serif;">Serein</span>
+                        <span class="brand-logo">SR</span><span class="fw-bold">Space <span class="text-accent">Reset</span></span>
                     </a>
                     <p class="text-muted small">Elevating your quality of life through bespoke organization and sustainable decluttering systems. Experience the peace of mind you deserve.</p>
                     <div class="social-links d-flex gap-3 mt-4">
@@ -239,7 +250,8 @@
                 <div class="col-lg-2 col-md-3 col-6">
                     <h5 class="fw-bold mb-4">Company</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="index2.html">Home 2</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -268,7 +280,7 @@
             <hr class="mt-5 mb-4 opacity-50">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="text-muted small mb-0">© 2026 Serein. All rights reserved.</p>
+                    <p class="text-muted small mb-0">© 2026 Space Reset. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="d-flex justify-content-md-end align-items-center gap-3">

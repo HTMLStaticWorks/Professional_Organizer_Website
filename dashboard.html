@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Serein</title>
+    <title>Dashboard | Space Reset</title>
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,33 +15,39 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .main-content {
-            margin-left: 250px;
-            padding: 40px;
+            margin-left: 260px;
+            padding: 16px;
             transition: var(--transition);
             background-color: var(--bg-alt);
-            min-height: 100vh;
         }
         .sidebar {
-            background-color: var(--secondary) !important;
+            background-color: var(--bg-main) !important;
             border-right: 1px solid var(--glass-border);
         }
+        [data-theme="dark"] .sidebar { background-color: var(--bg-card) !important; }
+
         .sidebar-link {
             color: var(--text-main) !important;
-            margin: 5px 15px;
+            margin: 4px 12px;
             border-radius: var(--radius-sm);
-            font-weight: 600;
+            font-weight: 500;
         }
-        .sidebar-link:hover, .sidebar-link.active {
-            background-color: var(--accent) !important;
+        .sidebar-link:hover {
+            background-color: var(--bg-alt);
+            color: var(--secondary) !important;
+        }
+        .sidebar-link.active {
+            background-color: var(--secondary) !important;
             color: white !important;
         }
         .navbar-dashboard {
             background-color: var(--glass-bg);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--glass-border);
         }
         @media (max-width: 991.98px) {
-            .sidebar { transform: translateX(-100%); z-index: 1050; }
+            .sidebar { transform: translateX(-100%); z-index: 1050; width: 260px; }
             .sidebar.active { transform: translateX(0); box-shadow: var(--shadow-md); }
             .main-content { margin-left: 0; padding: 20px; }
         }
@@ -53,8 +59,7 @@
     <div class="sidebar d-flex flex-column" id="sidebar">
         <div class="px-4 py-4 mb-3 border-bottom border-light">
             <a class="navbar-brand text-accent fs-4 d-flex align-items-center gap-2" href="index.html">
-                <i class="bi bi-stack"></i>
-                <span class="fw-bold" style="font-family: 'Playfair Display', serif;">Serein</span>
+                <span class="brand-logo">SR</span><span class="fw-bold">Space <span class="text-accent">Reset</span></span>
             </a>
         </div>
         <nav class="flex-grow-1">
@@ -63,7 +68,8 @@
             <a href="#invoices" class="sidebar-link"><i class="bi bi-receipt me-2"></i> Invoices</a>
             <a href="#messages" class="sidebar-link"><i class="bi bi-chat-text me-2"></i> Messages</a>
             <a href="#settings" class="sidebar-link"><i class="bi bi-gear me-2"></i> Settings</a>
-            <a href="#support" class="sidebar-link"><i class="bi bi-question-circle me-2"></i> Support</a>
+            <a href="#support" class="sidebar-link border-bottom border-light pb-3 mb-3"><i class="bi bi-question-circle me-2"></i> Support</a>
+            <a href="index.html" class="sidebar-link text-danger mt-3"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
         </nav>
         <div class="mt-auto p-4 border-top border-light">
             <div class="d-flex align-items-center gap-3 mb-4">
@@ -75,7 +81,7 @@
                     <div class="text-muted text-truncate" style="max-width: 120px;">Premium Member</div>
                 </div>
             </div>
-            <a href="javascript:void(0)" onclick="logout()" class="btn btn-sm btn-outline-danger w-100">Logout</a>
+            </div>
         </div>
     </div>
 
@@ -125,214 +131,77 @@
             </div>
         </nav>
 
-        <!-- Overview Section -->
-        <section id="overview" class="mb-5 reveal">
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="card-premium">
-                        <div class="text-muted small mb-2">Total Bookings</div>
-                        <h2 class="mb-0 fw-bold">12</h2>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-premium">
-                        <div class="text-muted small mb-2">Services Active</div>
-                        <h2 class="mb-0 fw-bold text-accent">3</h2>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-premium">
-                        <div class="text-muted small mb-2">Projects Completed</div>
-                        <h2 class="mb-0 fw-bold">8</h2>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-premium">
-                        <div class="text-muted small mb-2">Messages Sent</div>
-                        <h2 class="mb-0 fw-bold">24</h2>
-                    </div>
+        <!-- High-Density Workspace Grid -->
+        <div class="row g-3">
+            <!-- Summary Stats -->
+            <div class="col-12 mb-1">
+                <div class="row g-3">
+                    <div class="col-md-3"><div class="card-premium p-2 text-center small fw-bold">Active: 3</div></div>
+                    <div class="col-md-3"><div class="card-premium p-2 text-center small fw-bold text-success">Paid: $1,240</div></div>
+                    <div class="col-md-3"><div class="card-premium p-2 text-center small fw-bold text-warning">Pending: $440</div></div>
+                    <div class="col-md-3"><div class="card-premium p-2 text-center small fw-bold text-accent">Alerts: 2</div></div>
                 </div>
             </div>
-        </section>
 
-        <!-- Organizing Plan & Checklist -->
-        <section class="mb-5">
-            <div class="row g-4">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white h-100">
-                        <div class="card-header bg-white p-4 border-0">
-                            <h5 class="mb-0">Personalized Organizing Plan</h5>
-                        </div>
-                        <div class="card-body p-4 pt-0">
-                            <div class="p-3 bg-light rounded-3 mb-3">
-                                <h6 class="text-tertiary">Phase 1: Pantry Decluttering</h6>
-                                <p class="small mb-0">Empty all shelves, sort items by category, and discard expired goods. Estimated time: 3 hours.</p>
-                            </div>
-                            <div class="p-3 bg-light rounded-3 mb-3">
-                                <h6 class="text-primary">Phase 2: Labeling & Binning</h6>
-                                <p class="small mb-0">Implement clear container systems and personalized labels for daily accessibility.</p>
-                            </div>
-                            <button class="btn btn-primary-brand btn-sm">Download Full Plan (PDF)</button>
-                        </div>
+            <!-- Main Active Project -->
+            <div class="col-lg-12">
+                <div class="card border-0 shadow-sm rounded-4 bg-white p-3 mb-1">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 fw-bold"><i class="bi bi-briefcase me-2 text-secondary"></i> Master Closet Evolution</h6>
+                        <span class="badge bg-secondary px-2 py-1 small">In Progress (75%)</span>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white h-100">
-                        <div class="card-header bg-white p-4 border-0">
-                            <h5 class="mb-0">Quick Checklist</h5>
-                        </div>
-                        <div class="card-body p-4 pt-0">
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="check1" checked>
-                                <label class="form-check-label small" for="check1">Sign Service Agreement</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="check2" checked>
-                                <label class="form-check-label small" for="check2">Upload Kitchen Photos</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="check3">
-                                <label class="form-check-label small" for="check3">Confirm Deposit</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="check4">
-                                <label class="form-check-label small" for="check4">Pre-session survey</label>
-                            </div>
-                        </div>
+                    <div class="progress mb-3" style="height: 6px;"><div class="progress-bar bg-secondary" style="width: 75%;"></div></div>
+                    <div class="table-responsive">
+                        <table class="table table-sm align-middle mb-0 small">
+                            <tbody>
+                                <tr><td class="py-1">Hanger Install</td><td>Mar 28</td><td class="text-end text-success fw-bold">Done</td></tr>
+                                <tr><td class="py-1 border-0">Color Sorting</td><td>Mar 30</td><td class="text-end text-muted">Next</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="mb-5">
-            <h4 class="mb-4">Recent Projects</h4>
-            <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="mb-0">Current Project: Master Closet</h6>
-                    <span class="badge bg-secondary">In Progress</span>
-                </div>
-                <p class="small text-muted">Start Date: March 20, 2026 | Expected Completion: March 28, 2026</p>
-                <div class="progress" style="height: 8px;">
-                    <div class="progress-bar bg-secondary" style="width: 65%;"></div>
+            <!-- Billing & Messages Mixed -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 bg-white p-3 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0 fw-bold"><i class="bi bi-receipt me-2 text-secondary"></i> Billing</h6>
+                        <a href="#" class="small text-secondary text-decoration-none">View All</a>
+                    </div>
+                    <div class="list-group list-group-flush small">
+                        <div class="list-group-item px-0 py-2 d-flex justify-content-between border-0">
+                            <span>#INV-003 (Closet)</span>
+                            <span class="fw-bold">$145.00</span>
+                        </div>
+                        <div class="list-group-item px-0 py-2 d-flex justify-content-between border-0 border-top">
+                            <span>#INV-002 (Kitchen)</span>
+                            <span class="fw-bold">$299.00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-                <table class="table table-hover mb-0 bg-white">
-                    <thead class="bg-light">
-                        <tr>
-                            <th class="px-4 py-3">Project Name</th>
-                            <th class="py-3">Specialist</th>
-                            <th class="py-3">Status</th>
-                            <th class="py-3 text-end px-4">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="px-4 py-3">Kitchen Pantry Prep</td>
-                            <td>Jane Doe</td>
-                            <td><span class="badge bg-success-subtle text-success">Completed</span></td>
-                            <td class="text-end px-4"><button class="btn btn-sm btn-light"><i class="bi bi-eye"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3">Home Office Setup</td>
-                            <td>Alice Smith</td>
-                            <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
-                            <td class="text-end px-4"><button class="btn btn-sm btn-light"><i class="bi bi-eye"></i></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
 
-        <!-- Invoices Section -->
-        <section id="invoices" class="mb-5">
-            <h4 class="mb-4">Invoices & Payments</h4>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h6 class="mb-0">#INV-2026-001</h6>
-                            <span class="text-success fw-bold">Paid</span>
-                        </div>
-                        <p class="small text-muted mb-3">Basic Room Organization Service</p>
-                        <h5 class="fw-bold mb-0">$299.00</h5>
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 bg-white p-3 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0 fw-bold"><i class="bi bi-chat-text me-2 text-secondary"></i> Recent Messages</h6>
+                        <a href="#" class="small text-secondary text-decoration-none">Inbox</a>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h6 class="mb-0">#INV-2026-002</h6>
-                            <span class="text-warning fw-bold">Pending</span>
+                    <div class="list-group list-group-flush small">
+                        <div class="list-group-item px-0 py-2 border-0">
+                            <div class="d-flex justify-content-between"><span class="fw-bold">Jane</span> <small class="text-muted">3h</small></div>
+                            <p class="mb-0 text-truncate text-muted">Bins have arrived! I'll be over...</p>
                         </div>
-                        <p class="small text-muted mb-3">Custom Bins & Supplies</p>
-                        <h5 class="fw-bold mb-0">$145.00</h5>
+                        <div class="list-group-item px-0 py-2 border-0 border-top">
+                            <div class="d-flex justify-content-between"><span class="fw-bold">Support</span> <small class="text-muted">1d</small></div>
+                            <p class="mb-0 text-truncate text-muted">Agreement processed...</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Messages Section -->
-        <section id="messages" class="mb-5">
-            <h4 class="mb-4">Recent Messages</h4>
-            <div class="list-group list-group-flush shadow-sm rounded-4 overflow-hidden border-0">
-                <a href="#" class="list-group-item list-group-item-action p-4 border-0">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold">Jane Doe</h6>
-                        <small class="text-muted">3 hours ago</small>
-                    </div>
-                    <p class="mb-1 small">The storage bins have arrived! I'll be over tomorrow at 9 AM to begin the install.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action p-4 border-0 border-top">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1 fw-bold">Support Team</h6>
-                        <small class="text-muted">Yesterday</small>
-                    </div>
-                    <p class="mb-1 small">Your service agreement has been successfully processed and verified.</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Settings Section -->
-        <section id="settings" class="mb-5">
-            <h4 class="mb-4">Profile Settings</h4>
-            <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                <form>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label small fw-semibold">Email Notifications</label>
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" checked>
-                                <label class="form-check-label small">Project Updates</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-end">
-                            <button class="btn btn-primary-brand px-4">Save Changes</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <!-- Support Section -->
-        <section id="support">
-            <h4 class="mb-4">Help & Support</h4>
-            <div class="row g-4">
-                <div class="col-md-12">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 d-flex flex-row align-items-center gap-4">
-                        <div class="icon-box mb-0" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                            <i class="bi bi-headset"></i>
-                        </div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Contact Support Team</h6>
-                            <p class="text-muted small mb-0">Our experts are available 24/7 to help with your project.</p>
-                        </div>
-                        <button class="btn btn-secondary-brand ms-auto">Get Help</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
     </div>
 
     <!-- Bootstrap JS Bundle -->

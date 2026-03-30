@@ -173,6 +173,13 @@
             .main-content { margin-left: 0 !important; margin-right: 0 !important; padding: 20px; }
             .sidebar-overlay.active { display: block; }
         }
+
+        @media (max-width: 576px) {
+            .chart-container { gap: 2% !important; }
+            .bar-value { font-size: 0.65rem !important; }
+            .chart-label { font-size: 0.65rem !important; transform: rotate(-45deg); margin-top: 10px !important; }
+            .kpi-value { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -190,20 +197,28 @@
         </div>
         
         <div class="sidebar-scrollbox">
-            <div class="section-header">Menu</div>
-            <nav>
+            <div class="section-header">Dashboard</div>
+            <nav id="dashboardNav">
                 <a onclick="showSection('overview')" class="sidebar-link active" data-section="overview"><i class="bi bi-speedometer2"></i> System Overview</a>
                 <a onclick="showSection('projects')" class="sidebar-link" data-section="projects"><i class="bi bi-briefcase"></i> Active Projects</a>
                 <a onclick="showSection('invoices')" class="sidebar-link" data-section="invoices"><i class="bi bi-receipt"></i> Billing Center</a>
                 <a onclick="showSection('messages')" class="sidebar-link" data-section="messages"><i class="bi bi-chat-dots"></i> Message Inbox</a>
-                
-                <div class="section-header">Account</div>
+            </nav>
+            
+            <div class="section-header">Main Website</div>
+            <nav>
+                <a href="index.html" class="sidebar-link"><i class="bi bi-house"></i> Home 1</a>
+                <a href="index2.html" class="sidebar-link"><i class="bi bi-building"></i> Home 2</a>
+                <a href="services.html" class="sidebar-link"><i class="bi bi-grid"></i> Services</a>
+                <a href="about.html" class="sidebar-link"><i class="bi bi-info-circle"></i> About</a>
+                <a href="contact.html" class="sidebar-link"><i class="bi bi-envelope"></i> Contact</a>
+            </nav>
+
+            <div class="section-header">Account</div>
+            <nav>
                 <a onclick="showSection('settings')" class="sidebar-link" data-section="settings"><i class="bi bi-sliders"></i> Configuration</a>
                 <a onclick="showSection('support')" class="sidebar-link" data-section="support"><i class="bi bi-headset"></i> Help & Support</a>
-                
-                <div class="section-header">Extended</div>
-                <a href="index.html" class="sidebar-link"><i class="bi bi-house"></i> Back to Site</a>
-                <a href="login.html" class="sidebar-link text-danger mt-4"><i class="bi bi-power"></i> Logout</a>
+                <a href="login.html" class="sidebar-link text-danger mt-3"><i class="bi bi-power"></i> Logout</a>
             </nav>
         </div>
 
@@ -288,6 +303,83 @@
                         <div class="kpi-label">Time Saved</div>
                         <h3 class="kpi-value">18.5h</h3>
                         <div class="kpi-trend text-up"><i class="bi bi-arrow-up-short"></i> +25%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Order Trends Chart -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="kpi-card p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-5">
+                            <h4 class="fw-bold m-0" style="font-family: 'Playfair Display', serif;"><i class="bi bi-bar-chart-line text-accent me-2"></i> Work Order Trends</h4>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle rounded-pill px-3" data-bs-toggle="dropdown">Last 8 Months</button>
+                                <ul class="dropdown-menu shadow border-0 p-2">
+                                    <li><a class="dropdown-item rounded-2 py-2 small" href="#">Last 12 Months</a></li>
+                                    <li><a class="dropdown-item rounded-2 py-2 small" href="#">Current Year</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container" style="height: 300px; display: flex; align-items: flex-end; gap: 4%; padding: 20px 0;">
+                            <!-- Jan -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 40%; background: linear-gradient(var(--secondary), var(--secondary-hover)); border-radius: 8px 8px 0 0; position: relative;">
+                                    <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">12</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Jan</span>
+                            </div>
+                            <!-- Feb -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 65%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.85;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">18</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Feb</span>
+                            </div>
+                            <!-- Mar -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 90%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">24</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Mar</span>
+                            </div>
+                            <!-- Apr -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 50%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.75;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">15</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Apr</span>
+                            </div>
+                            <!-- May -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 75%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">21</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">May</span>
+                            </div>
+                            <!-- Jun -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 85%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.9;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">23</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Jun</span>
+                            </div>
+                            <!-- Jul -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 60%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.8;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">17</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Jul</span>
+                            </div>
+                            <!-- Aug -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 45%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">13</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Aug</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -401,7 +493,20 @@
         if (sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
         if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
 
-        // Sidebar Navigation Logic
+        // Auto-highlight active link based on URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPath) {
+                    // Remove active from any other links
+                    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Sidebar Navigation Logic for sections within dashboard.html
         function showSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('.dashboard-section').forEach(section => {
@@ -411,11 +516,17 @@
             const target = document.getElementById(sectionId);
             if(target) target.classList.add('active');
 
-            // Update Sidebar UI
+            // Update Sidebar UI for sections
             document.querySelectorAll('.sidebar-link').forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('data-section') === sectionId) {
-                    link.classList.add('active');
+                // Only change highlighting for links that have data-section
+                if (link.getAttribute('data-section')) {
+                    link.classList.remove('active');
+                    if(link.getAttribute('data-section') === sectionId) {
+                        link.classList.add('active');
+                    }
+                } else if (link.getAttribute('href') && !link.getAttribute('data-section')) {
+                    // If we navigate between dashboard sections, remove active from external links
+                    link.classList.remove('active');
                 }
             });
 

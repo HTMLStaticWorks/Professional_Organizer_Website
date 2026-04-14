@@ -5,8 +5,8 @@
 /* ── 1. CSS VARIABLES ──────────────────────────────────────── */
 :root {
     --primary:        #1e293b;
-    --secondary:      #10b981;
-    --secondary-hover:#059669;
+    --secondary:      #059669;
+    --secondary-hover:#047857;
     --text-main:      #1e293b;
     --text-body:      #334155;
     --text-muted:     #64748b;
@@ -80,7 +80,7 @@ label { color: var(--text-body); }
 
 /* ── 3. DARK MODE OVERRIDES ──────────────────────────────────── */
 /* Navbar */
-[data-theme="dark"] .navbar-toggler { filter:invert(1); border-color:rgba(255,255,255,0.4); }
+[data-theme="dark"] .navbar-toggler { border-color:rgba(255,255,255,0.4); }
 
 /* Cards */
 [data-theme="dark"] .card-premium { background-color: var(--bg-card); border-color: var(--glass-border); }
@@ -203,26 +203,22 @@ label { color: var(--text-body); }
     box-shadow: var(--shadow-sm);
 }
 [data-theme="dark"] .navbar-toggler {
-    border-color: rgba(255,255,255,0.1);
-    background-color: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.3);
+    background-color: rgba(255,255,255,0.12);
 }
 
+/* Standard icon behavior - will be overridden by data-theme specific filters below */
 .navbar-toggler-icon {
-    /* High contrast green for light mode */
-    filter: invert(53%) sepia(76%) saturate(452%) hue-rotate(113deg) brightness(92%) contrast(88%);
+    filter: invert(48%) sepia(91%) saturate(543%) hue-rotate(113deg) brightness(96%) contrast(92%);
     transition: var(--transition);
     width: 1.5em;
     height: 1.5em;
 }
 
-/* Force pure white for dark mode */
-[data-theme="dark"] .navbar-toggler-icon {
-    filter: invert(1) brightness(200) !important;
-}
-
-/* Ensure visibility when navbar-dark is used on dark heroes in light mode (e.g. index.html) */
-.navbar-dark .navbar-toggler-icon {
-    filter: invert(1) brightness(200) !important;
+/* Force pure white for dark mode or when navbar-dark is explicitly used on dark elements */
+[data-theme="dark"] .navbar-toggler-icon,
+.navbar-dark:not([data-theme="light"]) .navbar-toggler-icon {
+    filter: brightness(0) invert(1) !important;
 }
 
 .navbar-toggler:active, .navbar-toggler:focus {
@@ -243,6 +239,7 @@ label { color: var(--text-body); }
 [data-theme="dark"] .dropdown-item { color: var(--text-body); }
 [data-theme="dark"] .dropdown-item:hover { background-color: var(--bg-alt); color: var(--text-main); }
 [data-theme="dark"] .btn-light { background-color: var(--bg-alt); color: var(--text-main); border-color: var(--glass-border); }
+[data-theme="dark"] .btn-light:hover { background-color: var(--secondary); color: #fff !important; border-color: var(--secondary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
 /* Icon-box */
 [data-theme="dark"] .icon-box { background-color: rgba(52,211,153,0.12); color: var(--secondary); }
@@ -308,6 +305,8 @@ label { color: var(--text-body); }
 
 /* ── 5. UTILITY ──────────────────────────────────────────────── */
 .text-accent { color: var(--secondary) !important; }
+.bg-accent { background-color: var(--secondary) !important; color: #ffffff !important; }
+.bg-accent h1, .bg-accent h2, .bg-accent h3, .bg-accent h4, .bg-accent h5, .bg-accent p, .bg-accent .lead { color: #ffffff !important; }
 
 .section-tag {
     background-color: var(--bg-alt);
@@ -407,12 +406,13 @@ label { color: var(--text-body); }
 
 .nav-link {
     color: var(--text-main) !important;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0 12px;
     position: relative;
-    opacity: 0.8;
-    font-size: 0.95rem;
+    opacity: 1;
+    font-size: 1rem;
     white-space: nowrap;
+    transition: var(--transition);
 }
 .nav-link:hover, .nav-link.active { opacity: 1; color: var(--secondary) !important; }
 .nav-link.active::after {

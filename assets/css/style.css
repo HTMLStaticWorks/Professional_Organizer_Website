@@ -60,8 +60,15 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-main);
     font-weight: 700;
     letter-spacing: -0.025em;
-    line-height: 1.25;
+    line-height: 1.2;
 }
+
+.display-1 { font-size: clamp(2.5rem, 6vw, 3.5rem) !important; font-weight: 800; line-height: 1.1; }
+.display-2 { font-size: clamp(2.25rem, 5vw, 3.25rem) !important; }
+.display-3 { font-size: clamp(2rem, 4.5vw, 3rem) !important; }
+.display-4 { font-size: clamp(1.85rem, 4vw, 2.75rem) !important; }
+.display-5 { font-size: clamp(1.6rem, 3.5vw, 2.25rem) !important; }
+.display-6 { font-size: clamp(1.4rem, 3vw, 1.85rem) !important; }
 
 p { color: var(--text-body); }
 
@@ -191,8 +198,9 @@ label { color: var(--text-body); }
     padding: 10px;
     border-radius: 12px;
     transition: var(--transition);
-    border: 1px solid rgba(0,0,0,0.05);
-    background-color: rgba(255,255,255,0.05); /* Slight glass effect */
+    border: 1px solid var(--glass-border);
+    background-color: var(--bg-card); /* Use card background for consistency */
+    box-shadow: var(--shadow-sm);
 }
 [data-theme="dark"] .navbar-toggler {
     border-color: rgba(255,255,255,0.1);
@@ -200,14 +208,21 @@ label { color: var(--text-body); }
 }
 
 .navbar-toggler-icon {
-    filter: brightness(0); /* Force black for light mode */
+    /* High contrast green for light mode */
+    filter: invert(53%) sepia(76%) saturate(452%) hue-rotate(113deg) brightness(92%) contrast(88%);
     transition: var(--transition);
     width: 1.5em;
     height: 1.5em;
 }
 
+/* Force pure white for dark mode */
 [data-theme="dark"] .navbar-toggler-icon {
-    filter: invert(1) brightness(100); /* Force pure white for dark mode */
+    filter: invert(1) brightness(200) !important;
+}
+
+/* Ensure visibility when navbar-dark is used on dark heroes in light mode (e.g. index.html) */
+.navbar-dark .navbar-toggler-icon {
+    filter: invert(1) brightness(200) !important;
 }
 
 .navbar-toggler:active, .navbar-toggler:focus {
@@ -329,13 +344,18 @@ label { color: var(--text-body); }
     display: flex;
     align-items: center;
 }
-@media (min-width: 992px) {
+@media (max-width: 400px) {
+    .navbar .container {
+        flex-wrap: nowrap !important;
+    }
+}
+@media (min-width: 1200px) {
     .navbar-collapse .d-flex {
         margin-left: auto;
     }
-    .navbar .navbar-nav {
+    /* .navbar .navbar-nav {
         margin: 0 auto;
-    }
+    } */
 }
 .navbar + section { margin-top: 0; }
 
@@ -349,6 +369,22 @@ label { color: var(--text-body); }
     letter-spacing: -0.04em !important;
     text-decoration: none !important;
     white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+    .navbar-brand {
+        font-size: 1.25rem !important;
+        gap: 8px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-brand .brand-logo {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.65rem !important;
+        margin-right: 6px !important;
+    }
 }
 
 [data-theme="dark"] .navbar-brand { color: var(--text-main) !important; }
@@ -399,13 +435,23 @@ label { color: var(--text-body); }
     transition: var(--transition);
     padding: 0;
 }
+
+/* Navbar & Offcanvas specific text buttons - minimized size */
+.navbar .btn-primary-brand,
+.navbar .btn-secondary-brand,
+.offcanvas-body .btn-primary-brand,
+.offcanvas-body .btn-secondary-brand {
+    height: var(--icon-size) !important;
+    padding: 0 24px !important;
+    font-size: 0.9rem !important;
+}
+
 #themeToggle:hover, #themeToggleMobile:hover, .rtl-toggle:hover { background-color: var(--bg-alt); color: var(--secondary); }
 
-/* ── 7. HERO ─────────────────────────────────────────────────── */
-.hero { padding: 100px 0 80px; margin-top: -1px; }
-.hero h1 { font-size: 5rem; line-height: 1.1; color: #fff; margin-bottom: 32px; font-weight: 800; }
-.hero .lead { font-size: 1.85rem !important; opacity: 0.9; line-height: 1.5; margin-bottom: 48px !important; }
-.hero .section-tag { font-size: 1rem; padding: 12px 24px !important; margin-bottom: 32px !important; }
+.hero { padding: 80px 0 60px; margin-top: -1px; }
+.hero h1 { font-size: clamp(2.5rem, 7vw, 3.5rem); line-height: 1.1; color: #fff; margin-bottom: 24px; font-weight: 800; }
+.hero .lead { font-size: clamp(1.1rem, 2.5vw, 1.25rem) !important; opacity: 0.9; line-height: 1.6; margin-bottom: 40px !important; }
+.hero .section-tag { font-size: 0.9rem; padding: 10px 20px !important; margin-bottom: 24px !important; }
 
 /* Keep hero buttons uniform in width */
 @media (min-width: 577px) {
@@ -438,29 +484,32 @@ label { color: var(--text-body); }
     }
 }
 
-@media (max-width: 991px) {
-    .hero h1 { font-size: 2.75rem; }
-    .hero { text-align: center; }
+@media (max-width: 1199px) {
+    .hero { text-align: center; padding: 40px 0; }
     .hero .d-flex { justify-content: center !important; }
+    .section-padding { padding: 60px 0 !important; }
 }
 
 @media (max-width: 576px) {
     .hero .d-flex.flex-wrap {
         flex-direction: column !important;
-        gap: 15px !important;
+        gap: 12px !important;
         align-items: center;
         width: 100%;
-        max-width: 320px;
+        max-width: 330px;
         margin-left: auto;
         margin-right: auto;
     }
     .hero .btn-primary-brand, 
     .hero .btn-hero-outline,
-    .hero .btn-secondary-brand {
+    .hero .btn-secondary-brand,
+    .hero .btn-lg {
         display: flex !important;
-        width: 100%;
-        min-width: 280px;
-        max-width: 100%;
+        width: 100% !important;
+        min-width: 300px !important;
+        max-width: 100% !important;
+        height: 60px !important;
+        margin-bottom: 0px !important;
         margin: 0 !important;
         padding-left: 0 !important;
         padding-right: 0 !important;

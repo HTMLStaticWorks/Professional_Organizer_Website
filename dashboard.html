@@ -172,7 +172,7 @@
         }
 
         @media (max-width: 767.98px) {
-            .user-greeting h2 { font-size: 1.35rem; }
+            .user-greeting h2 { font-size: 1.2rem; }
             .top-navbar { margin-bottom: 20px; }
             .main-content { padding: 16px !important; }
             .user-profile-nav span { display: none; }
@@ -206,7 +206,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 991.98px) {
+        @media (max-width: 1199.98px) {
             .sidebar { transform: translateX(-100%); }
             [dir="rtl"] .sidebar { transform: translateX(100%); }
             .sidebar.active { transform: translateX(0); }
@@ -234,47 +234,31 @@
                 <span class="brand-logo">SR</span>
                 <span class="fw-bold">Space <span class="text-accent">Reset</span></span>
             </a>
-            <button class="btn btn-link text-white p-0 d-lg-none" id="closeSidebar">
+            <button class="btn btn-link text-white p-0 d-xl-none" id="closeSidebar">
                 <i class="bi bi-x-lg fs-4 text-white"></i>
             </button>
         </div>
         
         <div class="sidebar-scrollbox">
-            <div class="section-header">MAIN SITE</div>
+            <div class="section-header">NAVIGATE</div>
             <nav>
-                <a href="index.html" class="sidebar-link"><i class="bi bi-house"></i> Home 1</a>
-                <a href="index2.html" class="sidebar-link"><i class="bi bi-building-gear"></i> Home 2</a>
-                <a href="services.html" class="sidebar-link"><i class="bi bi-gear"></i> Services</a>
-                <a href="about.html" class="sidebar-link"><i class="bi bi-info-circle"></i> About Us</a>
-                <a href="contact.html" class="sidebar-link"><i class="bi bi-envelope"></i> Contact Us</a>
-                <a onclick="showSection('overview')" class="sidebar-link active" data-section="overview"><i class="bi bi-grid-3x3-gap"></i> Dashboard</a>
+                <a onclick="showSection('overview')" class="sidebar-link active" data-section="overview"><i class="bi bi-grid-3x3-gap"></i> Project Summary</a>
             </nav>
             
-            <div class="section-header">MANAGEMENT</div>
+            <div class="section-header">CLIENT HUB</div>
             <nav id="dashboardNav">
-                <a onclick="showSection('projects')" class="sidebar-link" data-section="projects"><i class="bi bi-briefcase"></i> Active Projects</a>
-                <a onclick="showSection('invoices')" class="sidebar-link" data-section="invoices"><i class="bi bi-receipt"></i> Billing Center</a>
-                <a onclick="showSection('messages')" class="sidebar-link" data-section="messages"><i class="bi bi-chat-dots"></i> Message Inbox</a>
+                <a onclick="showSection('projects')" class="sidebar-link" data-section="projects"><i class="bi bi-folder2-open"></i> My Spaces</a>
+                <a onclick="showSection('messages')" class="sidebar-link" data-section="messages"><i class="bi bi-chat-quote"></i> Organizer Chat</a>
             </nav>
 
-            <div class="section-header">ACCOUNT</div>
+            <div class="section-header">ADMINISTRATION</div>
             <nav>
-                <a onclick="showSection('settings')" class="sidebar-link" data-section="settings"><i class="bi bi-sliders"></i> Configuration</a>
-                <a onclick="showSection('support')" class="sidebar-link" data-section="support"><i class="bi bi-headset"></i> Help & Support</a>
-                <a href="login.html" class="sidebar-link text-danger mt-3 fw-bold"><i class="bi bi-power"></i> LOGOUT</a>
+                <a onclick="showSection('invoices')" class="sidebar-link" data-section="invoices"><i class="bi bi-credit-card-2-front"></i> Billing & receipts</a>
+                <a onclick="showSection('settings')" class="sidebar-link" data-section="settings"><i class="bi bi-person-gear"></i> Account Settings</a>
+                <a onclick="showSection('support')" class="sidebar-link" data-section="support"><i class="bi bi-life-preserver"></i> Get Help</a>
+                <hr class="mx-3 opacity-25">
+                <a href="login.html" class="sidebar-link text-danger fw-bold"><i class="bi bi-box-arrow-right"></i> LOGOUT</a>
             </nav>
-        </div>
-
-        <div class="p-4 border-top border-light">
-            <div class="d-flex align-items-center gap-3">
-                <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white" style="width: 44px; height: 44px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=jpg&fit=crop&q=80&w=100" class="w-100 h-100" style="object-fit:cover;">
-                </div>
-                <div>
-                    <div class="fw-bold small">John Doe</div>
-                    <div class="text-muted small" style="font-size: 0.7rem;">Elite Member</div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -283,7 +267,7 @@
         <!-- Top Navbar -->
         <div class="top-navbar">
             <div class="user-greeting">
-                <button class="btn btn-dark d-lg-none flex-shrink-0 p-2" id="sidebarToggle" style="border-radius:10px;">
+                <button class="btn btn-dark d-xl-none flex-shrink-0 p-2" id="sidebarToggle" style="border-radius:10px;">
                     <i class="bi bi-list fs-4"></i>
                 </button>
                 <div class="title-block">
@@ -293,7 +277,7 @@
             </div>
             <div class="d-flex align-items-center gap-2 flex-shrink-0">
                 <button class="btn btn-outline-secondary btn-sm rounded-circle d-none d-md-inline-flex" onclick="toggleRTL()" style="width:38px;height:38px;">
-                    <i class="bi bi-translate"></i>
+                    <i class="bi bi-arrow-left-right"></i>
                 </button>
                 <button class="btn btn-light rounded-circle shadow-sm" id="themeToggle" style="width:38px;height:38px;">
                     <i class="bi bi-moon-stars"></i>
@@ -324,119 +308,101 @@
             <div class="row g-4 mb-5">
                 <div class="col-md-3">
                     <div class="kpi-card">
-                        <div class="kpi-label">Active Projects</div>
-                        <h3 class="kpi-value">04</h3>
-                        <div class="kpi-trend text-up"><i class="bi bi-arrow-up-short"></i> +12.5%</div>
+                        <div class="kpi-label">Next Session</div>
+                        <h3 class="kpi-value text-accent">April 15</h3>
+                        <div class="kpi-trend fw-bold"><i class="bi bi-clock"></i> 10:30 AM</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="kpi-card">
-                        <div class="kpi-label">Project Revenue</div>
-                        <h3 class="kpi-value text-accent">$4,240</h3>
-                        <div class="kpi-trend text-up"><i class="bi bi-arrow-up-short"></i> +8.2%</div>
+                        <div class="kpi-label">Items Rehomed</div>
+                        <h3 class="kpi-value">142</h3>
+                        <div class="kpi-trend text-up"><i class="bi bi-arrow-up-short"></i> +28 this month</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="kpi-card">
-                        <div class="kpi-label">Pending Reviews</div>
-                        <h3 class="kpi-value">02</h3>
-                        <div class="kpi-trend text-down"><i class="bi bi-arrow-down-short"></i> -3.1%</div>
+                        <div class="kpi-label">Time Reclaimed</div>
+                        <h3 class="kpi-value">24.5h</h3>
+                        <div class="kpi-trend text-up"><i class="bi bi-arrow-up-short"></i> +5.2h efficiency</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="kpi-card">
-                        <div class="kpi-label">Time Saved</div>
-                        <h3 class="kpi-value">18.5h</h3>
-                        <div class="kpi-trend text-up"><i class="bi bi-arrow-up-short"></i> +25%</div>
+                        <div class="kpi-label">Space Reset Score</div>
+                        <h3 class="kpi-value">85%</h3>
+                        <div class="kpi-trend text-up"><i class="bi bi-stars"></i> Elite Level</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Work Order Trends Chart -->
+            <!-- Space Progress Chart -->
             <div class="row mb-5">
                 <div class="col-12">
                     <div class="kpi-card p-4">
                         <div class="d-flex justify-content-between align-items-center mb-5">
-                            <h4 class="fw-bold m-0" style="font-family: 'Playfair Display', serif;"><i class="bi bi-bar-chart-line text-accent me-2"></i> Work Order Trends</h4>
-                            <div class="dropdown">
-                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle rounded-pill px-3" data-bs-toggle="dropdown">Last 8 Months</button>
-                                <ul class="dropdown-menu shadow border-0 p-2">
-                                    <li><a class="dropdown-item rounded-2 py-2 small" href="#">Last 12 Months</a></li>
-                                    <li><a class="dropdown-item rounded-2 py-2 small" href="#">Current Year</a></li>
-                                </ul>
+                            <h4 class="fw-bold m-0" style="font-family: 'Playfair Display', serif;"><i class="bi bi-pie-chart text-accent me-2"></i> Space Optimization Progress</h4>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-secondary rounded-start-pill px-3 active">By Room</button>
+                                <button class="btn btn-sm btn-outline-secondary rounded-end-pill px-3">By Category</button>
                             </div>
                         </div>
                         
                         <div class="chart-container" style="height: 300px; display: flex; align-items: flex-end; gap: 4%; padding: 20px 0;">
-                            <!-- Jan -->
+                            <!-- Kitchen -->
                             <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
-                                <div class="chart-bar" style="width: 100%; height: 40%; background: linear-gradient(var(--secondary), var(--secondary-hover)); border-radius: 8px 8px 0 0; position: relative;">
-                                    <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">12</span>
+                                <div class="chart-bar" style="width: 100%; height: 95%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative;">
+                                    <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">95%</span>
                                 </div>
-                                <span class="chart-label mt-3 small text-muted">Jan</span>
+                                <span class="chart-label mt-3 small text-muted">Kitchen</span>
                             </div>
-                            <!-- Feb -->
+                            <!-- Closets -->
                             <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
-                                <div class="chart-bar" style="width: 100%; height: 65%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.85;">
-                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">18</span>
+                                <div class="chart-bar" style="width: 100%; height: 75%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.85;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">75%</span>
                                 </div>
-                                <span class="chart-label mt-3 small text-muted">Feb</span>
+                                <span class="chart-label mt-3 small text-muted">Closets</span>
                             </div>
-                            <!-- Mar -->
+                            <!-- Office -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 60%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">60%</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Office</span>
+                            </div>
+                            <!-- Garage -->
+                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <div class="chart-bar" style="width: 100%; height: 40%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.75;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">40%</span>
+                                </div>
+                                <span class="chart-label mt-3 small text-muted">Garage</span>
+                            </div>
+                            <!-- Pantry -->
                             <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
                                 <div class="chart-bar" style="width: 100%; height: 90%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative;">
-                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">24</span>
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">90%</span>
                                 </div>
-                                <span class="chart-label mt-3 small text-muted">Mar</span>
+                                <span class="chart-label mt-3 small text-muted">Pantry</span>
                             </div>
-                            <!-- Apr -->
+                            <!-- Digital -->
                             <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
-                                <div class="chart-bar" style="width: 100%; height: 50%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.75;">
-                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">15</span>
+                                <div class="chart-bar" style="width: 100%; height: 55%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.9;">
+                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">55%</span>
                                 </div>
-                                <span class="chart-label mt-3 small text-muted">Apr</span>
-                            </div>
-                            <!-- May -->
-                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
-                                <div class="chart-bar" style="width: 100%; height: 75%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative;">
-                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">21</span>
-                                </div>
-                                <span class="chart-label mt-3 small text-muted">May</span>
-                            </div>
-                            <!-- Jun -->
-                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
-                                <div class="chart-bar" style="width: 100%; height: 85%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.9;">
-                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">23</span>
-                                </div>
-                                <span class="chart-label mt-3 small text-muted">Jun</span>
-                            </div>
-                            <!-- Jul -->
-                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
-                                <div class="chart-bar" style="width: 100%; height: 60%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative; opacity: 0.8;">
-                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">17</span>
-                                </div>
-                                <span class="chart-label mt-3 small text-muted">Jul</span>
-                            </div>
-                            <!-- Aug -->
-                            <div class="chart-col" style="flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%;">
-                                <div class="chart-bar" style="width: 100%; height: 45%; background: var(--secondary); border-radius: 8px 8px 0 0; position: relative;">
-                                     <span class="bar-value" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--secondary);">13</span>
-                                </div>
-                                <span class="chart-label mt-3 small text-muted">Aug</span>
+                                <span class="chart-label mt-3 small text-muted">Digital</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Overview Table -->
+            <!-- Recent Activity Table -->
             <div class="mb-5">
                 <div class="d-flex justify-content-between align-items-end mb-4 px-2">
                     <div>
-                        <h4 class="fw-bold mb-1">Recent Engagements</h4>
-                        <p class="text-muted small mb-0">Real-time status of your organizational projects</p>
+                        <h4 class="fw-bold mb-1">Recent Activity</h4>
+                        <p class="text-muted small mb-0">Follow your space transformation journey</p>
                     </div>
-                    <button class="btn btn-dark btn-sm rounded-pill px-4">Generate Report</button>
                 </div>
                 
                 <div class="table-responsive">
@@ -444,27 +410,34 @@
                         <table class="table mb-0">
                             <thead>
                                 <tr>
-                                    <th>PROJECT NAME</th>
-                                    <th>CATEGORY</th>
-                                    <th>LAST UPDATE</th>
+                                    <th>SPACE</th>
+                                    <th>OBJECTIVE</th>
+                                    <th>DATE</th>
                                     <th>STATUS</th>
-                                    <th class="text-end">ACTION</th>
+                                    <th class="text-end">LOG</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><span class="fw-bold">Master Suite Reset</span></td>
-                                    <td>Residential Mastery</td>
-                                    <td>March 28, 2026</td>
-                                    <td><span class="status-pill status-confirmed">Confirmed</span></td>
-                                    <td class="text-end"><a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">View Details</a></td>
+                                    <td><span class="fw-bold">Kitchen Pantry</span></td>
+                                    <td>System Implementation</td>
+                                    <td>April 02, 2026</td>
+                                    <td><span class="status-pill status-confirmed">Completed</span></td>
+                                    <td class="text-end"><a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">View PDF</a></td>
                                 </tr>
                                 <tr>
-                                    <td><span class="fw-bold">Executive Office Audit</span></td>
-                                    <td>Corporate Excellence</td>
-                                    <td>March 25, 2026</td>
+                                    <td><span class="fw-bold">Master Closet</span></td>
+                                    <td>Sorting & Categorizing</td>
+                                    <td>March 28, 2026</td>
                                     <td><span class="status-pill status-pending">In Progress</span></td>
-                                    <td class="text-end"><a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">View Details</a></td>
+                                    <td class="text-end"><a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">View Progress</a></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fw-bold">Home Office</span></td>
+                                    <td>Paper Management</td>
+                                    <td>March 22, 2026</td>
+                                    <td><span class="status-pill status-confirmed">Upcoming</span></td>
+                                    <td class="text-end"><a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">Prep List</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -474,47 +447,178 @@
         </div>
 
         <div id="projects" class="dashboard-section">
-            <div class="card card-premium p-5 text-center">
-                 <i class="bi bi-briefcase display-1 text-accent mb-4"></i>
-                 <h4>Project Management Hub</h4>
-                 <p class="text-muted">Currently tracking 4 active corporate resets and 12 residential systems.</p>
-                 <button class="btn btn-primary-brand mt-4 px-5">Launch New Audit</button>
-            </div>
-        </div>
-
-        <div id="invoices" class="dashboard-section">
-            <div class="card card-premium p-5 text-center">
-                 <i class="bi bi-receipt display-1 text-accent mb-4"></i>
-                 <h4>Financial Overview</h4>
-                 <p class="text-muted">Manage your payments, download receipts, and view detailed time-tracking logs.</p>
-                 <button class="btn btn-secondary-brand mt-4 px-5">Download Statements</button>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card card-premium p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-4">
+                            <div class="icon-box m-0"><i class="bi bi-house-heart"></i></div>
+                            <span class="status-pill status-pending">75% Complete</span>
+                        </div>
+                        <h5 class="fw-bold">Kitchen & Pantry Reset</h5>
+                        <p class="text-muted small">Full systematic overhaul of food storage, spice organization, and workflow optimization.</p>
+                        <div class="progress mb-3" style="height: 6px;">
+                            <div class="progress-bar bg-secondary" style="width: 75%"></div>
+                        </div>
+                        <button class="btn btn-primary-brand btn-sm mt-auto">View Gallery</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-premium p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-4">
+                            <div class="icon-box m-0"><i class="bi bi-person-workspace"></i></div>
+                            <span class="status-pill status-pending">30% Complete</span>
+                        </div>
+                        <h5 class="fw-bold">Executive Office Audit</h5>
+                        <p class="text-muted small">Paper management, digital filing structure, and desk ergonomics for maximum productivity.</p>
+                        <div class="progress mb-3" style="height: 6px;">
+                            <div class="progress-bar bg-secondary" style="width: 30%"></div>
+                        </div>
+                        <button class="btn btn-primary-brand btn-sm mt-auto">Upload Docs</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="messages" class="dashboard-section">
-            <div class="card card-premium p-5 text-center">
-                 <i class="bi bi-chat-dots display-1 text-accent mb-4"></i>
-                 <h4>Unified Communications</h4>
-                 <p class="text-muted">Chat with your lead organizer or upload documentation for your next audit.</p>
-                 <button class="btn btn-primary-brand mt-4 px-5">Open Chat</button>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card card-premium p-0 overflow-hidden mb-4">
+                        <div class="p-4 border-bottom bg-alt">
+                            <h6 class="fw-bold mb-0">Conversations</h6>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action p-4 border-0 active" style="background: rgba(16,185,129,0.1); border-left: 4px solid var(--secondary) !important;">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <h6 class="mb-0 fw-bold">Sarah (Organizer)</h6>
+                                    <small class="text-muted">10:30 AM</small>
+                                </div>
+                                <p class="small text-muted mb-0">I've uploaded the labeling options for the kitchen...</p>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action p-4 border-0">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <h6 class="mb-0 fw-bold">Billing Dept</h6>
+                                    <small class="text-muted">Yesterday</small>
+                                </div>
+                                <p class="small text-muted mb-0">Your receipt for March is now available.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card card-premium p-4 d-flex flex-column" style="height: 500px;">
+                        <div class="flex-grow-1 overflow-auto mb-4">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="bg-alt p-3 rounded-4 align-self-start" style="max-width: 80%;">
+                                    <p class="small mb-0">Hi John! I've finished the initial sorting of the pantry. Would you prefer clear acrylic bins or woven baskets for the upper shelves?</p>
+                                </div>
+                                <div class="bg-primary text-white p-3 rounded-4 align-self-end" style="max-width: 80%;">
+                                    <p class="small mb-0">Let's go with the acrylic bins. I like being able to see everything at a glance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control rounded-pill-start border-0 bg-alt px-4" placeholder="Type your message...">
+                            <button class="btn btn-primary-brand rounded-pill-end px-4"><i class="bi bi-send"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="invoices" class="dashboard-section">
+            <div class="table-premium">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>INVOICE #</th>
+                            <th>SERVICE</th>
+                            <th>DATE</th>
+                            <th>AMOUNT</th>
+                            <th class="text-end">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="fw-bold">#INV-2026-001</span></td>
+                            <td>4-Hour Pantry Reset</td>
+                            <td>April 01, 2026</td>
+                            <td>$299.00</td>
+                            <td class="text-end"><button class="btn btn-sm btn-link text-accent"><i class="bi bi-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="fw-bold">#INV-2026-002</span></td>
+                            <td>Custom Labels & Bins</td>
+                            <td>April 01, 2026</td>
+                            <td>$145.50</td>
+                            <td class="text-end"><button class="btn btn-sm btn-link text-accent"><i class="bi bi-download"></i> PDF</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div id="settings" class="dashboard-section">
-            <div class="card card-premium p-5 text-center">
-                 <i class="bi bi-sliders display-1 text-accent mb-4"></i>
-                 <h4>System Configuration</h4>
-                 <p class="text-muted">Adjust your notification preferences and update your corporate credentials.</p>
-                 <button class="btn btn-secondary-brand mt-4 px-5">Save Changes</button>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card card-premium p-4">
+                        <h5 class="fw-bold mb-4">Profile Settings</h5>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">First Name</label>
+                                    <input type="text" class="form-control bg-alt border-0" value="John">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Last Name</label>
+                                    <input type="text" class="form-control bg-alt border-0" value="Doe">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label small fw-bold">Email Address</label>
+                                    <input type="email" class="form-control bg-alt border-0" value="john@example.com">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label small fw-bold">Current Password</label>
+                                    <input type="password" class="form-control bg-alt border-0" placeholder="••••••••">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary-brand mt-4 px-4">Update Profile</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-premium p-4">
+                        <h5 class="fw-bold mb-4">Notification Preferences</h5>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                            <label class="form-check-label small ms-2" for="emailNotif">Email Updates</label>
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="smsNotif">
+                            <label class="form-check-label small ms-2" for="smsNotif">SMS Alerts</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="support" class="dashboard-section">
-            <div class="card card-premium p-5 text-center">
-                 <i class="bi bi-headset display-1 text-accent mb-4"></i>
-                 <h4>Elite Support</h4>
-                 <p class="text-muted">Technical issues or concierge requests are handled with priority here.</p>
-                 <button class="btn btn-primary-brand mt-4 px-5">Contact Concierge</button>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card card-premium p-4 text-center">
+                        <div class="icon-box mx-auto mb-3"><i class="bi bi-headset"></i></div>
+                        <h5 class="fw-bold">Direct Line</h5>
+                        <p class="text-muted small">Concierge support for Elite members.</p>
+                        <a href="tel:+123456789" class="btn btn-primary-brand w-100">Call Concierge</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-premium p-4 text-center">
+                        <div class="icon-box mx-auto mb-3"><i class="bi bi-envelope-paper"></i></div>
+                        <h5 class="fw-bold">Submit a Ticket</h5>
+                        <p class="text-muted small">Technical issues or general inquiries.</p>
+                        <button class="btn btn-secondary-brand w-100">New Ticket</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -579,12 +683,12 @@
 
             // Update Title
             const labels = {
-                'overview': ['Executive', 'Summary'],
-                'projects': ['Project', 'Management'],
-                'invoices': ['Financial', 'Center'],
-                'messages': ['Secure', 'Inbox'],
-                'settings': ['System', 'Configuration'],
-                'support': ['Priority', 'Support']
+                'overview': ['Project', 'Summary'],
+                'projects': ['Space', 'Optimization'],
+                'invoices': ['Financial', 'Logs'],
+                'messages': ['Organizer', 'Chat'],
+                'settings': ['Account', 'Settings'],
+                'support': ['Client', 'Care']
             };
             
             if(labels[sectionId]) {
